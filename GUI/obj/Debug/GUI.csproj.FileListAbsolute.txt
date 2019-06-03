@@ -1,0 +1,57 @@
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\GUI.exe.config
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\GUI.exe
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\GUI.pdb
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\VisualReactiveWinForms.dll
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu_UI_v1.5.3.xml
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\VisualReactiveWinForms.xml
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.exe.config
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.Form1.resources
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.exe
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.pdb
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.Quanly.resources
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.submenu.resources
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
+C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.mnuQuanly.resources
+C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\GUI.exe.config
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\GUI.exe
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\GUI.pdb
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\VisualReactiveWinForms.dll
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\Bunifu_UI_v1.5.3.xml
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\bin\Debug\VisualReactiveWinForms.xml
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\obj\Debug\GUI.exe.config
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\obj\Debug\GUI.mnuQuanly.resources
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\obj\Debug\GUI.exe
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\obj\Debug\GUI.pdb
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\obj\Debug\GUI.frmMenu.resources
+C:\Users\Duy Quan\Desktop\GUI\GUI\GUI\obj\Debug\GUI.ucQuanLyHocSinh.resources
