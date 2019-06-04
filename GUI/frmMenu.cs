@@ -13,6 +13,7 @@ namespace GUI
 {
     public partial class frmMenu : Form
     {
+        private bool check_mnuQuanLy = false; //kiem tra menu quan ly co dang mo hay khong?
         public frmMenu()
         {
             InitializeComponent();
@@ -25,20 +26,24 @@ namespace GUI
         {
             VSReactive<int>.SetState("menu", int.Parse(((Control)sender).Tag.ToString()));
         }
-      
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void btnQuanLy_Click(object sender, EventArgs e)
         {
             sidepanel.Height = btnQuanLy.Height;
             sidepanel.Top = btnQuanLy.Top;
-            ucQuanLyHocSinh ucQuanLyHocSinh = new ucQuanLyHocSinh();
-            pnManHinhXuLy.Controls.Clear();
-            pnManHinhXuLy.Controls.Add(ucQuanLyHocSinh);
+            if (check_mnuQuanLy == false)
+            {
+                check_mnuQuanLy = true;
+                mnuQuanly menuQL = new mnuQuanly();
+                menuQL.Owner = this;
+                menuQL.FormClosed += MenuQL_FormClosed;
+                menuQL.ShowDialog();
+            }
+        }
+
+        private void MenuQL_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            check_mnuQuanLy = false;
         }
 
         private void button2_Click(object sender, EventArgs e)

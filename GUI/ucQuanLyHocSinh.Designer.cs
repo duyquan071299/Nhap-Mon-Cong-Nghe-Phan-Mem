@@ -370,7 +370,6 @@
             this.tbTenMe.Name = "tbTenMe";
             this.tbTenMe.Size = new System.Drawing.Size(303, 22);
             this.tbTenMe.TabIndex = 70;
-            this.tbTenMe.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // tbNgheNghiepCha
             // 

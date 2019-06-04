@@ -47,6 +47,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "QUẢN LÝ HỌC SINH";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -83,6 +84,7 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mnuQuanly";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "mnuQuanly";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

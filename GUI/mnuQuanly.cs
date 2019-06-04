@@ -23,6 +23,12 @@ namespace GUI
             this.Close();
         }
 
-  
+        private void button1_Click(object sender, EventArgs e)
+        {
+            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Clear();
+            ucQuanLyHocSinh ucQuanLyHocSinh = new ucQuanLyHocSinh();
+            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Add(ucQuanLyHocSinh);
+            this.Close();
+        }
     }
 }
