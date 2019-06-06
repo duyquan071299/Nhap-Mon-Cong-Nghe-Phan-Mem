@@ -1,2 +1,9 @@
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDAL\obj\Debug\QLTHDAL.csprojAssemblyReference.cache
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDAL\obj\Debug\QLTHDAL.csproj.CoreCompileInputs.cache
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDAL\bin\Debug\QLTHDAL.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDAL\bin\Debug\QLTHDAL.pdb
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDAL\bin\Debug\QLTHDTO.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDAL\bin\Debug\QLTHDTO.pdb
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDAL\obj\Debug\QLTHDAL.csproj.CopyComplete
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDAL\obj\Debug\QLTHDAL.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDAL\obj\Debug\QLTHDAL.pdb

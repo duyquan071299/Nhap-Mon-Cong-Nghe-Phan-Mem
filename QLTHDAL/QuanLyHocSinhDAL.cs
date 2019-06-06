@@ -23,9 +23,9 @@ namespace QLTHDAL
         {
             string query = string.Empty;
             query += "INSERT INTO [tblHocSinh] ";
-            query += "VALUES (@MaHocSinh,@HoTen,@GioiTinh,@NgaySinh,@NoiSinh," +
-                    "@NguyenQuan,@DanToc,@TonGiao,@HoKhauTT," +
-                    "@TenCha,@TenMe,@NNCha,@NNMe,@UuTien,@Khoi)";
+            query += "VALUES (@MaHocSinh,@GioiTinh,@HoTen,@NgaySinh,@Khoi,@HoKhauTT," +
+                    "@NguyenQuan,@DanToc,@TonGiao," +
+                    "@TenCha,@NNCha,@TenMe,@NNMe,@UuTien)";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -38,7 +38,6 @@ namespace QLTHDAL
                     cmd.Parameters.AddWithValue("@HoTen", QLHS.HoTen);
                     cmd.Parameters.AddWithValue("@GioiTinh", QLHS.GioiTinh);
                     cmd.Parameters.AddWithValue("@NgaySinh", QLHS.NgaySinh);
-                    cmd.Parameters.AddWithValue("@NoiSinh", QLHS.NoiSinh);
                     cmd.Parameters.AddWithValue("@NguyenQuan", QLHS.NguyenQuan);
                     cmd.Parameters.AddWithValue("@DanToc", QLHS.DanToc);
                     cmd.Parameters.AddWithValue("@TonGiao", QLHS.TonGiao);
@@ -183,6 +182,62 @@ namespace QLTHDAL
                 }
             }
             return lsMSHS;
+        }
+
+        public List<QuanLyHocSinhDTO> Select()
+        {
+            string query = string.Empty;
+            query += "Select * from [tblHocSinh] ";
+
+            List<QuanLyHocSinhDTO> lsDSHS = new List<QuanLyHocSinhDTO>();
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                QuanLyHocSinhDTO QLHS = new QuanLyHocSinhDTO();
+                                QLHS.MaHS = reader["MaHS"].ToString();
+                                QLHS.HoTen = reader["HoTen"].ToString();
+                                QLHS.GioiTinh = reader["GioiTinh"].ToString();
+                                QLHS.NgaySinh = DateTime.Parse(reader["NgaySinh"].ToString());
+                                QLHS.NguyenQuan = reader["NguyenQuan"].ToString();
+                                QLHS.DanToc = reader["DanToc"].ToString();
+                                QLHS.TonGiao = reader["TonGiao"].ToString();
+                                QLHS.HoKhauTT = reader["HoKhauTT"].ToString();
+                                QLHS.TenCha = reader["TenCha"].ToString();
+                                QLHS.TenMe = reader["TenMe"].ToString();
+                                QLHS.NNCha = reader["NNCHha"].ToString();
+                                QLHS.NNMe = reader["NNMe"].ToString();
+                                QLHS.Khoi = reader["Khoi"].ToString();
+                                QLHS.UuTien = reader["UuTien"].ToString();
+                                lsDSHS.Add(QLHS);
+                            }
+                        }
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            return lsDSHS;
         }
 
     }
