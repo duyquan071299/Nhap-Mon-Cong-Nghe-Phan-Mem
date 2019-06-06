@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QLTHDTO;
+using QLTHBUS;
 namespace GUI
 {
     public partial class ucQuanLyHocSinh : UserControl
@@ -16,6 +17,7 @@ namespace GUI
         {
             InitializeComponent();
         }
+        private QuanLyHocSinhBUS qlhsBus;
         private int dtgv_hang = -1;
         private bool dang_them = false;
         private bool dang_sua = false;
@@ -146,6 +148,7 @@ namespace GUI
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
             btnBoQua.Enabled = false;
+            qlhsBus = new QuanLyHocSinhBUS();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -154,8 +157,39 @@ namespace GUI
             {
                 if (checkdata())
                 {
-                    
-                    dtgvDanhSachSinhVien.Rows.Add("17520122", tbHoVaTen.Text,cbGioiTinh.Text ,dtpNgaySinh.Value.ToString("MM/dd/yyyy"), tbNoiSinh.Text, tbNguyenQuan.Text, cbDanToc.Text, cbTonGiao.Text, tbHoKhau.Text, tbTenCha.Text, tbNgheNghiepCha.Text, tbTenMe.Text, tbNgheNghiepMe.Text, cbUuTien.Text);
+                    int temp_MaHS = 17;
+                    //List<string> danhsachmshs = new List<string>();
+                    // danhsachmshs = qlhsBus.Select();
+
+                    Random ran = new Random();
+                    int temp1 = ran.Next(1, 9999);
+                    temp_MaHS = temp_MaHS * 10000 + temp1;
+                    QuanLyHocSinhDTO hs = new QuanLyHocSinhDTO();
+                    hs.MaHS = temp_MaHS.ToString();
+                    hs.HoTen = tbHoVaTen.Text;
+                    hs.GioiTinh = cbGioiTinh.Text;
+                    hs.NgaySinh = dtpNgaySinh.Value;
+                    hs.NoiSinh = tbNoiSinh.Text;
+                    hs.NguyenQuan = tbNguyenQuan.Text;
+                    hs.DanToc = cbDanToc.Text;
+                    hs.TonGiao = cbTonGiao.Text;
+                    hs.HoKhauTT = tbHoKhau.Text;
+                    hs.TenCha = tbTenCha.Text;
+                    hs.TenMe = tbTenMe.Text;
+                    hs.NNCha = tbNgheNghiepCha.Text;
+                    hs.NNMe = tbNgheNghiepMe.Text;
+                    hs.UuTien = cbUuTien.Text;
+                    hs.Khoi = cbKhoi.Text;
+                    if(qlhsBus.Them(hs)==true)
+                    {
+                        MessageBox.Show("Thêm học sinh thành công");
+                        dtgvDanhSachSinhVien.Rows.Add(temp_MaHS.ToString(), cbKhoi.Text, tbHoVaTen.Text, cbGioiTinh.Text, dtpNgaySinh.Value.ToString("MM/dd/yyyy"), tbNoiSinh.Text, tbNguyenQuan.Text, cbDanToc.Text, cbTonGiao.Text, tbHoKhau.Text, tbTenCha.Text, tbNgheNghiepCha.Text, tbTenMe.Text, tbNgheNghiepMe.Text, cbUuTien.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm học sinh thất bại. Vui lòng kiểm tra lại dữ liệu");
+                    }
+
                     foreach (Control temp in this.Controls)
                     {
                         if (temp is TextBox)
@@ -186,7 +220,8 @@ namespace GUI
                     {
                         dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[1].Value = tbHoVaTen.Text;
                         dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[2].Value = cbGioiTinh.Text;
-                        dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[3].Value = dtpNgaySinh.Value.ToString("MM/dd/yyyy");
+                        dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[3].Value = cbKhoi.Text;
+                        dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[4].Value = dtpNgaySinh.Value.ToString("MM/dd/yyyy");
                         dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[4].Value = tbNoiSinh.Text;
                         dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[5].Value = tbNguyenQuan.Text;
                         dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[6].Value = cbDanToc.Text;
@@ -264,7 +299,8 @@ namespace GUI
             {
                 tbHoVaTen.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[1].Value.ToString();
                 cbGioiTinh.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[2].Value.ToString();
-                dtpNgaySinh.Value = DateTime.ParseExact(dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[3].Value.ToString(), "MM/dd/yyyy", null);
+                cbKhoi.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[3].Value.ToString();
+                dtpNgaySinh.Value = DateTime.ParseExact(dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[4].Value.ToString(), "MM/dd/yyyy", null);
                 tbNoiSinh.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[4].Value.ToString();
                 tbNguyenQuan.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[5].Value.ToString();
                 cbDanToc.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[6].Value.ToString();
