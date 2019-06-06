@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QLTHDTO
+{
+    public class QuanLyHocSinhDTO
+    {
+        private string sHoTen;
+        private string sGioiTinh;
+        private string sNguyenQuan;
+        private string sNoiSinh;
+        private DateTime dtNgaySinh;
+        private string sTonGiao;
+        private string sHoKhauTT;
+        private string sTenCha;
+        private string sTenMe;
+        private string sNNCha;
+        private string sNNMe;
+        private string sUuTien;
+        private string sMaHS;
+        private string sKhoi;
+        private string sDanToc;
+            
+
+        public string HoTen { get => sHoTen; set => sHoTen = value; }
+        public string GioiTinh { get => sGioiTinh; set => sGioiTinh = value; }
+        public string NguyenQuan { get => sNguyenQuan; set => sNguyenQuan = value; }
+        public string NoiSinh { get => sNoiSinh; set => sNoiSinh = value; }
+        public string TonGiao { get => sTonGiao; set => sTonGiao = value; }
+        public string HoKhauTT { get => sHoKhauTT; set => sHoKhauTT = value; }
+        public string TenCha { get => sTenCha; set => sTenCha = value; }
+        public string TenMe { get => sTenMe; set => sTenMe = value; }
+        public string NNCha { get => sNNCha; set => sNNCha = value; }
+        public string NNMe { get => sNNMe; set => sNNMe = value; }
+        public string UuTien { get => sUuTien; set => sUuTien = value; }
+        public string MaHS { get => sMaHS; set => sMaHS = value; }
+        public DateTime NgaySinh { get => dtNgaySinh; set => dtNgaySinh = value; }
+        public string Khoi { get => sKhoi; set => sKhoi = value; }
+        public string DanToc { get => sDanToc; set => sDanToc = value; }
+    }
+}

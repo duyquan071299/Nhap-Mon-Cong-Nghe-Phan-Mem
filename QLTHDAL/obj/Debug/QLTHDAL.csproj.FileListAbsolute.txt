@@ -1,0 +1,2 @@
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDAL\obj\Debug\QLTHDAL.csprojAssemblyReference.cache
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDAL\obj\Debug\QLTHDAL.csproj.CoreCompileInputs.cache
