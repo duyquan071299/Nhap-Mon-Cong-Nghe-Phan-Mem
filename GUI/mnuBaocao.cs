@@ -21,5 +21,21 @@ namespace GUI
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Clear();
+            ucBaocaoMon guiBaoCaoMon = new ucBaocaoMon();
+            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Add(guiBaoCaoMon);
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Clear();
+            ucBaocaoHocki guiBaoCaoNam = new ucBaocaoHocki();
+            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Add(guiBaoCaoNam);
+            this.Close();
+        }
     }
 }

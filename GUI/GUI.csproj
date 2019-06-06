@@ -77,25 +77,100 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="mnuBaocao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mnuBaocao.Designer.cs">
+      <DependentUpon>mnuBaocao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mnuHethong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mnuHethong.Designer.cs">
+      <DependentUpon>mnuHethong.cs</DependentUpon>
+    </Compile>
     <Compile Include="mnuQuanly.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mnuQuanly.Designer.cs">
       <DependentUpon>mnuQuanly.cs</DependentUpon>
     </Compile>
+    <Compile Include="mnuTracuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mnuTracuu.Designer.cs">
+      <DependentUpon>mnuTracuu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucBaocaoMon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBaocaoMon.Designer.cs">
+      <DependentUpon>ucBaocaoMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucBaocaoHocki.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBaocaoHocki.Designer.cs">
+      <DependentUpon>ucBaocaoHocki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucPhanQuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPhanQuyen.Designer.cs">
+      <DependentUpon>ucPhanQuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucQuanlyDiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQuanlyDiem.Designer.cs">
+      <DependentUpon>ucQuanlyDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucQuanLyHocSinh.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucQuanLyHocSinh.Designer.cs">
       <DependentUpon>ucQuanLyHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucQuanlylop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQuanlylop.Designer.cs">
+      <DependentUpon>ucQuanlylop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucThamso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThamso.Designer.cs">
+      <DependentUpon>ucThamso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucTracuuDiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTracuuDiem.Designer.cs">
+      <DependentUpon>ucTracuuDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucTraCuuTTHS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTraCuuTTHS.Designer.cs">
+      <DependentUpon>ucTraCuuTTHS.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mnuBaocao.resx">
+      <DependentUpon>mnuBaocao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mnuHethong.resx">
+      <DependentUpon>mnuHethong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mnuQuanly.resx">
       <DependentUpon>mnuQuanly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mnuTracuu.resx">
+      <DependentUpon>mnuTracuu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,8 +181,32 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ucBaocaoMon.resx">
+      <DependentUpon>ucBaocaoMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBaocaoHocki.resx">
+      <DependentUpon>ucBaocaoHocki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPhanQuyen.resx">
+      <DependentUpon>ucPhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQuanlyDiem.resx">
+      <DependentUpon>ucQuanlyDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucQuanLyHocSinh.resx">
       <DependentUpon>ucQuanLyHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQuanlylop.resx">
+      <DependentUpon>ucQuanlylop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThamso.resx">
+      <DependentUpon>ucThamso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTracuuDiem.resx">
+      <DependentUpon>ucTracuuDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTraCuuTTHS.resx">
+      <DependentUpon>ucTraCuuTTHS.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

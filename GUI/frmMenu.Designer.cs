@@ -160,7 +160,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMenu";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.PnlMainMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -170,7 +169,7 @@
 
         private System.Windows.Forms.Panel PnlMainMenu;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel pnManHinhXuLy;
+        public System.Windows.Forms.Panel pnManHinhXuLy;
         private System.Windows.Forms.Button btnQuanLy;
         private System.Windows.Forms.Panel sidepanel;
         private System.Windows.Forms.Button button4;

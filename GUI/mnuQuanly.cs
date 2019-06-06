@@ -26,8 +26,24 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             (this.Owner as frmMenu).pnManHinhXuLy.Controls.Clear();
-            ucQuanLyHocSinh ucQuanLyHocSinh = new ucQuanLyHocSinh();
-            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Add(ucQuanLyHocSinh);
+            ucQuanLyHocSinh guiQuanLyHocSinh = new ucQuanLyHocSinh();
+            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Add(guiQuanLyHocSinh);
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Clear();
+            ucQuanlylop guiQuanLyLop = new ucQuanlylop();
+            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Add(guiQuanLyLop);
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Clear();
+            ucQuanlyDiem guiQuanLyDiem = new ucQuanlyDiem();
+            (this.Owner as frmMenu).pnManHinhXuLy.Controls.Add(guiQuanLyDiem);
             this.Close();
         }
     }

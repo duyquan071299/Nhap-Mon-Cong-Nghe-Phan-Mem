@@ -51,26 +51,28 @@
             this.button2.BackColor = System.Drawing.Color.LightSkyBlue;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("UTM Avo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(412, 158);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(247, 80);
             this.button2.TabIndex = 7;
-            this.button2.Text = "BÁO CÁO TỔNG KẾT NĂM HỌC";
+            this.button2.Text = "BÁO CÁO TỔNG KẾT HỌC KÌ";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("UTM Avo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(94, 158);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(247, 80);
             this.button1.TabIndex = 6;
             this.button1.Text = "BÁO CÁO TỔNG KẾT MÔN HỌC";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // mnuBaocao
             // 
@@ -83,6 +85,7 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mnuBaocao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "mnuBaocao";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

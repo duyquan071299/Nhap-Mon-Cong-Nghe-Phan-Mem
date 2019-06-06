@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Quanly : UserControl
+    public partial class ucBaocaoHocki : UserControl
     {
-        public Quanly()
+        public ucBaocaoHocki()
         {
             InitializeComponent();
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
