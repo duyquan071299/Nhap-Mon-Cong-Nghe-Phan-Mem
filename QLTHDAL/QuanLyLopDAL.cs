@@ -9,7 +9,7 @@ using QLTHDTO;
 
 namespace QLTHDAL
 {
-    class QuanLyLopDAL
+     public class QuanLyLopDAL
     {
         private string connectionString;
         public QuanLyLopDAL()
