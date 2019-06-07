@@ -33,10 +33,14 @@ namespace QLTHBUS
             return re;
         }
 
-        public List<string> Select()
+        public List<string> SelectMSSV()
         {
             return qlhsDAL.SelectMSSV();
         }
 
+        public List<QuanLyHocSinhDTO> SelectAll()
+        {
+            return qlhsDAL.Select();
+        }
     }
 }
