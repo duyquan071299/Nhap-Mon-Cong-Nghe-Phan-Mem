@@ -76,3 +76,42 @@ C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.csproj.CoreCompileInputs
 C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.exe
 C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.pdb
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\GUI.exe.config
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\GUI.exe
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\GUI.pdb
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu_UI_v1.5.3.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\VisualReactiveWinForms.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu_UI_v1.5.3.xml
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\VisualReactiveWinForms.xml
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.exe.config
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.Form1.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuBaocao.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuHethong.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuQuanly.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuTracuu.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.Properties.Resources.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucQuanlyHocsinh.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucBaocaoMon.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucBaocaoNam.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucPhanQuyen.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucQuanlyDiem.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucQuanlylop.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucThamso.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucTracuuDiem.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucTraCuuTTHS.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csproj.CopyComplete
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.exe
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.pdb

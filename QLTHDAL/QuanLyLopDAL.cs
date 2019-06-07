@@ -9,24 +9,24 @@ using QLTHDTO;
 
 namespace QLTHDAL
 {
-    public class QuanLyDiemDAL
+    class QuanLyLopDAL
     {
         private string connectionString;
-        public QuanLyDiemDAL()
+        public QuanLyLopDAL()
         {
-            connectionString = ConfigurationManager.AppSettings["ConnectionString"];
+            ConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
 
         public string ConnectionString { get => connectionString; set => connectionString = value; }
 
-        public List<QuanLyDiemDTO> SelectHS(string TenLop)
+        public List<QuanLyLopDTO> SelectDSLop(string TenLop)
         {
             string query = string.Empty;
-            query += "Select [TenHocSinh], [GioiTinh]" +
-                " from [tblDiem],[tblHocSinh],[tblLop]" +
-                " where [tblDiem].[MaHS]=[tblHocSinh].[MaHS] and [tblDiem].[MaLop]=[tblLop].[MaLop] and [tblDSLop].TenLop=@TenLop";
+            query += "Select [tblHocSinh].[MaHS], [TenHocSinh], [GioiTinh], [NgaySinh] " +
+                "from [tblHocSinh],[tblDSLop],[tblLop] " +
+                "where [tblHocSinh].[MaHS]=[tblDSLop].[MaHS] and [tblDSLop].[MaLop]=[tblLop].[MaLop] and [TenLop]=@TenLop ";
 
-            List<QuanLyDiemDTO> lsQLD = new List<QuanLyDiemDTO>();
+            List<QuanLyHocSinhDTO> lsDSL = new List<QuanLyHocSinhDTO>();
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -36,7 +36,7 @@ namespace QLTHDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@TenLop", TenLop);
+
                     try
                     {
                         con.Open();
@@ -46,10 +46,12 @@ namespace QLTHDAL
                         {
                             while (reader.Read())
                             {
-                                QuanLyDiemDTO QLD = new QuanLyDiemDTO();
-                                QLD.HoTen = reader["TenHocSinh"].ToString();
-                                QLD.GioiTinh = reader["GioiTinh"].ToString();
-                                lsQLD.Add(QLD);
+                                QuanLyLopDTO QLL = new QuanLyLopDTO();
+                                QLL.MaHS = reader["MaHS"].ToString();
+                                QLL.HoTen = reader["HoTen"].ToString();
+                                QLL.GioiTinh = reader["GioiTinh"].ToString();
+                                QLL.NgaySinh = DateTime.Parse(reader["NgaySinh"].ToString());
+                                lsDSL.Add(QLL);
                             }
                         }
                         con.Close();
@@ -62,14 +64,17 @@ namespace QLTHDAL
                     }
                 }
             }
-            return lsQLD;
+            return lsDSHS;
         }
 
-        public bool Them(QuanLyDiemDTO QLD)
+        public bool Them(QuanLyLopDTO QLL)
         {
             string query = string.Empty;
-            query += "UPDATE tblHocSinh SET [Diem15]=@Diem15,[Diem45]=@Diem45,[DiemHocKy]=@DiemHocKy,[DiemTB]=@DiemTB " +
-                " WHERE [MaHS]=@MaHocSinh";
+            query += "INSERT INTO [tblDSLop] ";
+            query += "VALUES (@MaHS,@MaLop)";
+
+            SqlCommand cm = new SqlCommand();
+
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -79,25 +84,20 @@ namespace QLTHDAL
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
 
-                    SqlCommand cm = new SqlCommand();
-
-                    cm.CommandText = "Select [MaHS] from [tblHocSinh] where [TenHocSinh]=@TenHS";
-                    cm.Parameters.AddWithValue("@TenHS", QLD.HoTen);
+                    cm.CommandText = "Select [MaLop] from [tblLop] where [TenLop]=@TenLop";
+                    cm.Parameters.AddWithValue("@TenLop", QLL.TenLop);
                     SqlDataReader reader = null;
                     reader = cm.ExecuteReader();
                     if (reader.HasRows == true)
                     {
                         while (reader.Read())
                         {
-                            string MaTemp = reader["MaHS"].ToString();
-                            cmd.Parameters.AddWithValue("@MaHS", MaTemp);
+                            string MaTemp = reader["MaLop"].ToString();
+                            cmd.Parameters.AddWithValue("@MaLop", MaTemp);
                         }
                     }
 
-                    cmd.Parameters.AddWithValue("@Diem15", QLD.Diem15Ph);
-                    cmd.Parameters.AddWithValue("@Diem45", QLD.Diem45Ph);
-                    cmd.Parameters.AddWithValue("@DiemHocKy", QLD.DiemHocKy);
-                    cmd.Parameters.AddWithValue("@DiemTB", QLD.DiemTB);
+                    cmd.Parameters.AddWithValue("@MaHocSinh", QLL.MaHS);
                     try
                     {
                         con.Open();
@@ -115,10 +115,15 @@ namespace QLTHDAL
             return true;
         }
 
-        public bool Sua(QuanLyDiemDTO QLD)
+        public bool Sua(QuanLyLopDTO QLL)
         {
             string query = string.Empty;
-            query += "UPDATE tblHocSinh SET [Diem15]=@Diem15,[Diem45]=@Diem45,[DiemHocKy]=@DiemHocKy,[DiemTB]=@DiemTB  WHERE [MaHS]=@MaHocSinh";
+            query += "UPDATE tblDSHocSinh SET [MaLop]=@MaLop" +
+                "  WHERE [MaHS]=@MaHocSinh";
+
+
+            SqlCommand cm = new SqlCommand();
+
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -128,24 +133,50 @@ namespace QLTHDAL
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
 
-                    SqlCommand cm = new SqlCommand();
-
-                    cm.CommandText = "Select [MaHS] from [tblHocSinh] where [TenHocSinh]=@TenHS";
-                    cm.Parameters.AddWithValue("@TenHS", QLD.HoTen);
+                    cm.CommandText = "Select [MaLop] from [tblLop] where [TenLop]=@TenLop";
+                    cm.Parameters.AddWithValue("@TenLop", QLL.TenLop);
                     SqlDataReader reader = null;
                     reader = cm.ExecuteReader();
                     if (reader.HasRows == true)
                     {
                         while (reader.Read())
                         {
-                            string MaTemp = reader["MaHS"].ToString();
-                            cmd.Parameters.AddWithValue("@MaHS", MaTemp);
+                            string MaTemp = reader["MaLop"].ToString();
+                            cmd.Parameters.AddWithValue("@MaLop", MaTemp);
                         }
                     }
-                    cmd.Parameters.AddWithValue("@Diem15", QLD.Diem15Ph);
-                    cmd.Parameters.AddWithValue("@Diem45", QLD.Diem45Ph);
-                    cmd.Parameters.AddWithValue("@DiemHocKy", QLD.DiemHocKy);
-                    cmd.Parameters.AddWithValue("@DiemTB", QLD.DiemTB);
+
+                    cmd.Parameters.AddWithValue("@MaHocSinh", QLL.MaHS);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        public bool Xoa(QuanLyLopDTO QLL)
+        {
+            string query = string.Empty;
+            query += "DELETE FROM [tblDSLop] WHERE [MaHocSinh] = @MaHocSinh";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@MaHocSinh", QLL.MaHS);
                     try
                     {
                         con.Open();
@@ -163,6 +194,4 @@ namespace QLTHDAL
             return true;
         }
     }
-
-       
 }
