@@ -26,7 +26,7 @@ namespace QLTHDAL
                 "from [tblHocSinh],[tblDSLop],[tblLop] " +
                 "where [tblHocSinh].[MaHS]=[tblDSLop].[MaHS] and [tblDSLop].[MaLop]=[tblLop].[MaLop] and [TenLop]=@TenLop ";
 
-            List<QuanLyHocSinhDTO> lsDSL = new List<QuanLyHocSinhDTO>();
+            List<QuanLyLopDTO> lsDSL = new List<QuanLyLopDTO>();
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -64,7 +64,7 @@ namespace QLTHDAL
                     }
                 }
             }
-            return lsDSHS;
+            return lsDSL;
         }
 
         public bool Them(QuanLyLopDTO QLL)

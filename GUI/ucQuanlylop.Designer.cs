@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Khối 10");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Khối 11");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Khối 12");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Khối 10");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Khối 11");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Khối 12");
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.ThongTinLop = new System.Windows.Forms.TextBox();
+            this.tbTenLop = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -47,7 +47,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.LapDanhSach = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -58,16 +58,16 @@
             this.treeView1.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "K10";
-            treeNode1.Text = "Khối 10";
-            treeNode2.Name = "K11";
-            treeNode2.Text = "Khối 11";
-            treeNode3.Name = "K12";
-            treeNode3.Text = "Khối 12";
+            treeNode4.Name = "K10";
+            treeNode4.Text = "Khối 10";
+            treeNode5.Name = "K11";
+            treeNode5.Text = "Khối 11";
+            treeNode6.Name = "K12";
+            treeNode6.Text = "Khối 12";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
+            treeNode4,
+            treeNode5,
+            treeNode6});
             this.treeView1.Size = new System.Drawing.Size(130, 308);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -96,12 +96,12 @@
             this.label1.Text = "Thông tin lớp";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ThongTinLop
+            // tbTenLop
             // 
-            this.ThongTinLop.Location = new System.Drawing.Point(451, 43);
-            this.ThongTinLop.Name = "ThongTinLop";
-            this.ThongTinLop.Size = new System.Drawing.Size(207, 22);
-            this.ThongTinLop.TabIndex = 3;
+            this.tbTenLop.Location = new System.Drawing.Point(451, 43);
+            this.tbTenLop.Name = "tbTenLop";
+            this.tbTenLop.Size = new System.Drawing.Size(207, 22);
+            this.tbTenLop.TabIndex = 3;
             // 
             // textBox2
             // 
@@ -236,18 +236,19 @@
             this.button5.Text = "HỦY";
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // LapDanhSach
             // 
-            this.button6.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(368, 255);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(235, 44);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "Lập danh sách lớp";
-            this.button6.UseVisualStyleBackColor = false;
+            this.LapDanhSach.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.LapDanhSach.FlatAppearance.BorderSize = 0;
+            this.LapDanhSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LapDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LapDanhSach.Location = new System.Drawing.Point(368, 255);
+            this.LapDanhSach.Name = "LapDanhSach";
+            this.LapDanhSach.Size = new System.Drawing.Size(235, 44);
+            this.LapDanhSach.TabIndex = 18;
+            this.LapDanhSach.Text = "Lập danh sách lớp";
+            this.LapDanhSach.UseVisualStyleBackColor = false;
+            this.LapDanhSach.Click += new System.EventHandler(this.LapDanhSach_Click);
             // 
             // dataGridView1
             // 
@@ -265,7 +266,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.LapDanhSach);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -278,7 +279,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ThongTinLop);
+            this.Controls.Add(this.tbTenLop);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.treeView1);
@@ -296,7 +297,7 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox ThongTinLop;
+        private System.Windows.Forms.TextBox tbTenLop;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
@@ -309,7 +310,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button LapDanhSach;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

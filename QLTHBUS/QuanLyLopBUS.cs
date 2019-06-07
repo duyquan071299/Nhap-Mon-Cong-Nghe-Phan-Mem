@@ -8,7 +8,7 @@ using QLTHDTO;
 
 namespace QLTHBUS
 {
-    class QuanLyLopBUS
+    public class QuanLyLopBUS
     {
         private QuanLyLopDAL qllDAL;
 

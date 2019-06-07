@@ -1,0 +1,1 @@
+SQLCMD -S DESKTOP-MHF1MAB -E -i test.sql
