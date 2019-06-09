@@ -15,6 +15,7 @@ namespace QLTHDTO
         private DateTime dtNgaySinh;
         private string sMaKhoi;
         private string sTenLop;
+        private string sMaLop;
 
         public string TTLop { get => sTTLop; set => sTTLop = value; }
         public string MaHS { get => sMaHS; set => sMaHS = value; }
@@ -23,5 +24,6 @@ namespace QLTHDTO
         public DateTime NgaySinh { get => dtNgaySinh; set => dtNgaySinh = value; }
         public string MaKhoi { get => sMaKhoi; set => sMaKhoi = value; }
         public string TenLop { get => sTenLop; set => sTenLop = value; }
+        public string MaLop { get => sMaLop; set => sMaLop = value; }
     }
 }

@@ -42,5 +42,10 @@ namespace QLTHBUS
         {
             return qlhsDAL.Select();
         }
+
+        public List<QuanLyHocSinhDTO> SelectHSChuaCoLoP()
+        {
+            return qlhsDAL.SelectHSChuaCoLop();
+        }
     }
 }

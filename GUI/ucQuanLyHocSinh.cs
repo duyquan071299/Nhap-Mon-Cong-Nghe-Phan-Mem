@@ -17,12 +17,36 @@ namespace GUI
         {
             InitializeComponent();
         }
+        private ucThamso a = new ucThamso();
         private QuanLyHocSinhBUS qlhsBus;
         private int dtgv_hang = -1;
         private bool dang_them = false;
         private bool dang_sua = false;
         private bool checkdata()
         {
+            a.Load_DanhSachThamSo();
+            string TuoiToiThieu = string.Empty;
+            string TuoiToiDa = string.Empty;
+            foreach (DataGridViewRow temp in a.dtgvThamSo.Rows)
+            {
+                if (temp.Cells[0].Value.ToString() == "Số tuổi tối thiểu")
+                {
+                    TuoiToiThieu = temp.Cells[1].Value.ToString();
+                }
+                if (temp.Cells[0].Value.ToString() == "Số tuổi tối đa")
+                {
+                    TuoiToiDa = temp.Cells[1].Value.ToString();
+                }
+            }
+
+            if(int.Parse(DateTime.Now.Year.ToString())- int.Parse(dtpNgaySinh.Value.Year.ToString()) > int.Parse(TuoiToiDa) ||
+                    int.Parse(DateTime.Now.Year.ToString()) - int.Parse(dtpNgaySinh.Value.Year.ToString()) < int.Parse(TuoiToiThieu) )
+            {
+                MessageBox.Show("Tuổi của học sinh không hợp lệ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbHoVaTen.Focus();
+                return false;
+            }
+
             if (string.IsNullOrWhiteSpace(tbHoVaTen.Text))
             {
                 MessageBox.Show("Chưa nhập tên SV", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -116,23 +140,7 @@ namespace GUI
                 cbUuTien.Focus();
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(cbKhoi.Text))
-            {
-                MessageBox.Show("Chưa nhập khối", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cbKhoi.Focus();
-                return false;
-            }
-            string temp_cbKhoi = "";
-            foreach (var items in cbKhoi.Items)
-            {
-                temp_cbKhoi += items.ToString();
-            }
-            if (!temp_cbKhoi.Contains(cbKhoi.Text))
-            {
-                MessageBox.Show("Đối tượng ưu tiên không hợp lệ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cbKhoi.Focus();
-                return false;
-            }
+            
             return true;
         }
 
@@ -228,7 +236,6 @@ namespace GUI
                     hs.NNCha = tbNgheNghiepCha.Text;
                     hs.NNMe = tbNgheNghiepMe.Text;
                     hs.UuTien = cbUuTien.Text;
-                    hs.Khoi = cbKhoi.Text;
                     if (qlhsBus.Them(hs)==true)
                     {
                         MessageBox.Show("Thêm học sinh thành công");
@@ -253,6 +260,7 @@ namespace GUI
                     }
                     dtpNgaySinh.Enabled = false;
                     btnThem.Enabled = true;
+                    btnXoa.Enabled = false;
                     btnTim.Enabled = true;
                     btnLuu.Enabled = false;
                     dang_them = false;
@@ -281,7 +289,6 @@ namespace GUI
                         hs.NNCha = tbNgheNghiepCha.Text;
                         hs.NNMe = tbNgheNghiepMe.Text;
                         hs.UuTien = cbUuTien.Text;
-                        hs.Khoi = cbKhoi.Text;
                         if (qlhsBus.Sua(hs)==true)
                         {
                             MessageBox.Show("Sửa thông tin học sinh thành công");
@@ -307,6 +314,7 @@ namespace GUI
                         dtpNgaySinh.Enabled = false;
                         btnLuu.Enabled = false;
                         btnTim.Enabled = true;
+                        btnXoa.Enabled = false;
                         dang_sua = false;
                     }
 
@@ -335,6 +343,7 @@ namespace GUI
             btnThem.Enabled = true;
             btnTim.Enabled = true;
             btnLuu.Enabled = false;
+            btnXoa.Enabled = false;
             btnBoQua.Enabled = false;
             if (dang_them)
             {
@@ -348,32 +357,34 @@ namespace GUI
 
         private void dtgvDanhSachSinhVien_SelectionChanged(object sender, EventArgs e)
         {
-            if (dtgvDanhSachSinhVien.CurrentCell == null)
+            if (dang_them == false && dang_sua==false)
             {
-                dtgv_hang = -1;
-            }
-            else
-                dtgv_hang = dtgvDanhSachSinhVien.CurrentCell.RowIndex;
-            if (dtgv_hang >= 0)
-            {
-                cbKhoi.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[1].Value.ToString();
-                tbHoVaTen.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[2].Value.ToString();
-                cbGioiTinh.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[3].Value.ToString();
-                dtpNgaySinh.Value = (DateTime)dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[4].Value;
-                tbNoiSinh.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[5].Value.ToString();
-                tbNguyenQuan.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[6].Value.ToString();
-                cbDanToc.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[7].Value.ToString();
-                cbTonGiao.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[8].Value.ToString();
-                tbHoKhau.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[9].Value.ToString();
-                tbTenCha.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[10].Value.ToString();
-                tbNgheNghiepCha.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[11].Value.ToString();
-                tbTenMe.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[12].Value.ToString();
-                tbNgheNghiepMe.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[13].Value.ToString();
-                cbUuTien.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[14].Value.ToString();
-                if (dtgvDanhSachSinhVien.CurrentCell != dtgvDanhSachSinhVien[0, 0])
+                if (dtgvDanhSachSinhVien.CurrentCell == null)
                 {
-                    btnSua.Enabled = true;
-                    btnXoa.Enabled = true;
+                    dtgv_hang = -1;
+                }
+                else
+                    dtgv_hang = dtgvDanhSachSinhVien.CurrentCell.RowIndex;
+                if (dtgv_hang >= 0)
+                {
+                    tbHoVaTen.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[1].Value.ToString();
+                    cbGioiTinh.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[2].Value.ToString();
+                    dtpNgaySinh.Value = (DateTime)dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[3].Value;
+                    tbNoiSinh.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[4].Value.ToString();
+                    tbNguyenQuan.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[5].Value.ToString();
+                    cbDanToc.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[6].Value.ToString();
+                    cbTonGiao.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[7].Value.ToString();
+                    tbHoKhau.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[8].Value.ToString();
+                    tbTenCha.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[9].Value.ToString();
+                    tbNgheNghiepCha.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[10].Value.ToString();
+                    tbTenMe.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[11].Value.ToString();
+                    tbNgheNghiepMe.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[12].Value.ToString();
+                    cbUuTien.Text = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[13].Value.ToString();
+                    if (dtgvDanhSachSinhVien.CurrentCell != dtgvDanhSachSinhVien[0, 0])
+                    {
+                        btnSua.Enabled = true;
+                        btnXoa.Enabled = true;
+                    }
                 }
             }
         }

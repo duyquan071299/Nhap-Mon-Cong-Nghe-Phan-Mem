@@ -39,6 +39,11 @@ namespace QLTHBUS
             return qllDAL.SelectDSLop(TenLop);
         }
 
+        public List<string> SelectLop(string TenKhoi)
+        {
+            return qllDAL.SelectLop(TenKhoi);
+        }
+
       
     }
 }

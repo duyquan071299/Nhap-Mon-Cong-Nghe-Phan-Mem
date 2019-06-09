@@ -63,11 +63,8 @@
             this.cbDanToc = new System.Windows.Forms.ComboBox();
             this.btnLuu = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbKhoi = new System.Windows.Forms.Label();
-            this.cbKhoi = new System.Windows.Forms.ComboBox();
             this.dtgvDanhSachSinhVien = new System.Windows.Forms.DataGridView();
             this.MSHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Khoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoVaTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -250,7 +247,7 @@
             "Không có"});
             this.cbUuTien.Location = new System.Drawing.Point(151, 180);
             this.cbUuTien.Name = "cbUuTien";
-            this.cbUuTien.Size = new System.Drawing.Size(281, 24);
+            this.cbUuTien.Size = new System.Drawing.Size(657, 24);
             this.cbUuTien.TabIndex = 47;
             // 
             // lbMaHocSinh
@@ -556,38 +553,11 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "(mm/dd/yy)";
             // 
-            // lbKhoi
-            // 
-            this.lbKhoi.AutoSize = true;
-            this.lbKhoi.BackColor = System.Drawing.Color.Transparent;
-            this.lbKhoi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbKhoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKhoi.ForeColor = System.Drawing.Color.Snow;
-            this.lbKhoi.Location = new System.Drawing.Point(438, 182);
-            this.lbKhoi.Name = "lbKhoi";
-            this.lbKhoi.Size = new System.Drawing.Size(42, 18);
-            this.lbKhoi.TabIndex = 80;
-            this.lbKhoi.Text = "Khối";
-            // 
-            // cbKhoi
-            // 
-            this.cbKhoi.Enabled = false;
-            this.cbKhoi.FormattingEnabled = true;
-            this.cbKhoi.Items.AddRange(new object[] {
-            "10",
-            "11",
-            "12"});
-            this.cbKhoi.Location = new System.Drawing.Point(563, 182);
-            this.cbKhoi.Name = "cbKhoi";
-            this.cbKhoi.Size = new System.Drawing.Size(245, 24);
-            this.cbKhoi.TabIndex = 81;
-            // 
             // dtgvDanhSachSinhVien
             // 
             this.dtgvDanhSachSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDanhSachSinhVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MSHS,
-            this.Khoi,
             this.HoVaTen,
             this.GioiTinh,
             this.NgaySinh,
@@ -615,13 +585,6 @@
             this.MSHS.HeaderText = "Mã số học sinh";
             this.MSHS.Name = "MSHS";
             this.MSHS.ReadOnly = true;
-            // 
-            // Khoi
-            // 
-            this.Khoi.DataPropertyName = "Khoi";
-            this.Khoi.HeaderText = "Khối";
-            this.Khoi.Name = "Khoi";
-            this.Khoi.ReadOnly = true;
             // 
             // HoVaTen
             // 
@@ -720,8 +683,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.Controls.Add(this.cbKhoi);
-            this.Controls.Add(this.lbKhoi);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.cbDanToc);
             this.Controls.Add(this.btnBoQua);
@@ -803,11 +764,8 @@
         private System.Windows.Forms.ComboBox cbDanToc;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbKhoi;
-        private System.Windows.Forms.ComboBox cbKhoi;
         private System.Windows.Forms.DataGridView dtgvDanhSachSinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn MSHS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Khoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoVaTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;

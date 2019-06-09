@@ -8,7 +8,7 @@ using QLTHDTO;
 
 namespace QLTHBUS
 {
-    class QuanLyDiemBUS
+    public  class QuanLyDiemBUS
     {
         private QuanLyDiemDAL qldDAL;
 
@@ -17,23 +17,32 @@ namespace QLTHBUS
             qldDAL = new QuanLyDiemDAL();
         }
 
-        public bool Them(QuanLyDiemDTO QLD)
-        {
-            bool re = qldDAL.Them(QLD);
-            return re;
-        }
+        //public bool Them(QuanLyDiemDTO QLD)
+        //{
+        //    bool re = qldDAL.Them(QLD);
+        //    return re;
+        //}
 
         public bool Sua(QuanLyDiemDTO QLD)
         {
-            bool re = qldDAL.Them(QLD);
+            bool re = qldDAL.Sua(QLD);
             return re;
         }
 
-        public List<QuanLyDiemDTO> SelectHS(string TenLop)
+        public bool LamMoi(QuanLyDiemDTO QLD)
         {
-            return qldDAL.SelectHS(TenLop);
+            bool re = qldDAL.LamMoi(QLD);
+            return re;
         }
 
+        public List<QuanLyDiemDTO> SelectHS(QuanLyDiemDTO QLD)
+        {
+            return qldDAL.SelectHS(QLD);
+        }
 
+        public List<QuanLyDiemDTO> SelectMon()
+        {
+            return qldDAL.SelectDSMonHoc();
+        }
     }
 }

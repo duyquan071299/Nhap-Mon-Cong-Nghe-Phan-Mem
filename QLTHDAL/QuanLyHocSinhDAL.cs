@@ -23,9 +23,9 @@ namespace QLTHDAL
         {
             string query = string.Empty;
             query += "INSERT INTO [tblHocSinh] ";
-            query += "VALUES (@MaHocSinh,@Khoi,@HoTen,@GioiTinh,@NgaySinh,@NoiSinh," +
+            query += "VALUES (@MaHocSinh,@HoTen,@GioiTinh,@NgaySinh,@NoiSinh," +
                     "@NguyenQuan,@DanToc,@TonGiao,@HoKhauTT," +
-                    "@TenCha,@NNCha,@TenMe,@NNMe,@UuTien)";
+                    "@TenCha,@NNCha,@TenMe,@NNMe,@UuTien,null)";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -35,7 +35,6 @@ namespace QLTHDAL
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
                     cmd.Parameters.AddWithValue("@MaHocSinh", QLHS.MaHS);
-                    cmd.Parameters.AddWithValue("@Khoi", QLHS.Khoi);
                     cmd.Parameters.AddWithValue("@HoTen", QLHS.HoTen);
                     cmd.Parameters.AddWithValue("@GioiTinh", QLHS.GioiTinh);
                     cmd.Parameters.AddWithValue("@NgaySinh", QLHS.NgaySinh);
@@ -102,7 +101,7 @@ namespace QLTHDAL
             string query = string.Empty;
             query += "UPDATE [tblHocSinh] SET [TenHocSinh]=@HoTen,[GioiTinh]=@GioiTinh,[NgaySinh]=@NgaySinh,[NoiSinh]=@NoiSinh," +
                     "[NguyenQuan]=@NguyenQuan,[DanToc]=@DanToc,[TonGiao]=@TonGiao,[HoKhauTT]=@HoKhauTT," +
-                    "[TenCha]=@TenCha,[TenMe]=@TenMe,[NNCha]=@NNCha,[NNMe]=@NNMe,[UuTien]=@UuTien,[Khoi]=@Khoi  WHERE [MaHS]=@MaHocSinh";
+                    "[TenCha]=@TenCha,[TenMe]=@TenMe,[NNCha]=@NNCha,[NNMe]=@NNMe,[UuTien]=@UuTien  WHERE [MaHS]=@MaHocSinh";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -112,7 +111,6 @@ namespace QLTHDAL
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
                     cmd.Parameters.AddWithValue("@MaHocSinh", QLHS.MaHS);
-                    cmd.Parameters.AddWithValue("@Khoi", QLHS.Khoi);
                     cmd.Parameters.AddWithValue("@HoTen", QLHS.HoTen);
                     cmd.Parameters.AddWithValue("@GioiTinh", QLHS.GioiTinh);
                     cmd.Parameters.AddWithValue("@NgaySinh", QLHS.NgaySinh);
@@ -146,7 +144,7 @@ namespace QLTHDAL
         public List<string> SelectMSSV()
         {
             string query = string.Empty;
-            query += "Select [MaHocSinh] from [tblHocSinh] ";
+            query += "Select [MaHS] from [tblHocSinh] ";
 
             List<string> lsMSHS = new List<string>();
 
@@ -168,7 +166,7 @@ namespace QLTHDAL
                         {
                             while (reader.Read())
                             {
-                                string Mshs = reader["MaHocSinh"].ToString();
+                                string Mshs = reader["MaHS"].ToString();
                                 lsMSHS.Add(Mshs);
                             }
                         }
@@ -213,7 +211,6 @@ namespace QLTHDAL
                             {
                                 QuanLyHocSinhDTO QLHS = new QuanLyHocSinhDTO();
                                 QLHS.MaHS = reader["MaHS"].ToString();
-                                QLHS.Khoi = reader["Khoi"].ToString();
                                 QLHS.HoTen = reader["TenHocSinh"].ToString();
                                 QLHS.GioiTinh = reader["GioiTinh"].ToString();
                                 QLHS.NgaySinh = DateTime.Parse(reader["NgaySinh"].ToString());
@@ -227,6 +224,63 @@ namespace QLTHDAL
                                 QLHS.TenMe = reader["TenMe"].ToString();
                                 QLHS.NNMe = reader["NNMe"].ToString();
                                 QLHS.UuTien = reader["UuTien"].ToString();
+                                QLHS.SMaLop = reader["MaLop"].ToString();
+                                lsDSHS.Add(QLHS);
+                            }
+                        }
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            return lsDSHS;
+        }
+        public List<QuanLyHocSinhDTO> SelectHSChuaCoLop()
+        {
+            string query = string.Empty;
+            query += "Select * from [tblHocSinh] where [MaLop] is null";
+
+            List<QuanLyHocSinhDTO> lsDSHS = new List<QuanLyHocSinhDTO>();
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                QuanLyHocSinhDTO QLHS = new QuanLyHocSinhDTO();
+                                QLHS.MaHS = reader["MaHS"].ToString();
+                                QLHS.HoTen = reader["TenHocSinh"].ToString();
+                                QLHS.GioiTinh = reader["GioiTinh"].ToString();
+                                QLHS.NgaySinh = DateTime.Parse(reader["NgaySinh"].ToString());
+                                QLHS.NoiSinh = reader["NoiSinh"].ToString();
+                                QLHS.NguyenQuan = reader["NguyenQuan"].ToString();
+                                QLHS.DanToc = reader["DanToc"].ToString();
+                                QLHS.TonGiao = reader["TonGiao"].ToString();
+                                QLHS.HoKhauTT = reader["HoKhauTT"].ToString();
+                                QLHS.TenCha = reader["TenCha"].ToString();
+                                QLHS.NNCha = reader["NNCha"].ToString();
+                                QLHS.TenMe = reader["TenMe"].ToString();
+                                QLHS.NNMe = reader["NNMe"].ToString();
+                                QLHS.UuTien = reader["UuTien"].ToString();
+                                QLHS.SMaLop = reader["MaLop"].ToString();
                                 lsDSHS.Add(QLHS);
                             }
                         }

@@ -51,6 +51,7 @@
     <Compile Include="QuanLyDiemDAL.cs" />
     <Compile Include="QuanLyHocSinhDAL.cs" />
     <Compile Include="QuanLyLopDAL.cs" />
+    <Compile Include="QuanLyThamSoDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QLTHDTO\QLTHDTO.csproj">

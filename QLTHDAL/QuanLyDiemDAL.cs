@@ -19,12 +19,13 @@ namespace QLTHDAL
 
         public string ConnectionString { get => connectionString; set => connectionString = value; }
 
-        public List<QuanLyDiemDTO> SelectHS(string TenLop)
+        public List<QuanLyDiemDTO> SelectHS(QuanLyDiemDTO qldDTO)
         {
             string query = string.Empty;
-            query += "Select [TenHocSinh], [GioiTinh]" +
-                " from [tblDiem],[tblHocSinh],[tblLop]" +
-                " where [tblDiem].[MaHS]=[tblHocSinh].[MaHS] and [tblDiem].[MaLop]=[tblLop].[MaLop] and [tblDSLop].TenLop=@TenLop";
+            query += "Select a.MaHS, a.TenHocSinh,c.Diem15,c.Diem45,c.DiemCuoiKi " +
+                    "from tblHocSinh a,tblLop b, tblDiem c, tblMonHoc d, tblHocKi e" +
+                    " where a.MaLop = b.MaLop and a.MaHS = c.MaHS and c.MaMonHoc = d.MaMonHoc and c.MaHK = e.MaHK "+
+                    "and b.TenLop = @TenLop and e.TenHK = @TenHK and d.TenMonHoc = @TenMon";
 
             List<QuanLyDiemDTO> lsQLD = new List<QuanLyDiemDTO>();
 
@@ -36,7 +37,9 @@ namespace QLTHDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@TenLop", TenLop);
+                    cmd.Parameters.AddWithValue("@TenLop", qldDTO.Lop);
+                    cmd.Parameters.AddWithValue("@TenHK", qldDTO.HocKy);
+                    cmd.Parameters.AddWithValue("@TenMon", qldDTO.Mon);
                     try
                     {
                         con.Open();
@@ -47,8 +50,11 @@ namespace QLTHDAL
                             while (reader.Read())
                             {
                                 QuanLyDiemDTO QLD = new QuanLyDiemDTO();
+                                QLD.MaHS = reader["MaHS"].ToString();
                                 QLD.HoTen = reader["TenHocSinh"].ToString();
-                                QLD.GioiTinh = reader["GioiTinh"].ToString();
+                                QLD.Diem15Ph = reader["Diem15"].ToString();
+                                QLD.Diem45Ph = reader["Diem45"].ToString();
+                                QLD.DiemHocKy = reader["DiemCuoiKi"].ToString();
                                 lsQLD.Add(QLD);
                             }
                         }
@@ -64,61 +70,16 @@ namespace QLTHDAL
             }
             return lsQLD;
         }
-
-        public bool Them(QuanLyDiemDTO QLD)
-        {
-            string query = string.Empty;
-            query += "UPDATE tblHocSinh SET [Diem15]=@Diem15,[Diem45]=@Diem45,[DiemHocKy]=@DiemHocKy,[DiemTB]=@DiemTB " +
-                " WHERE [MaHS]=@MaHocSinh";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-
-                    SqlCommand cm = new SqlCommand();
-
-                    cm.CommandText = "Select [MaHS] from [tblHocSinh] where [TenHocSinh]=@TenHS";
-                    cm.Parameters.AddWithValue("@TenHS", QLD.HoTen);
-                    SqlDataReader reader = null;
-                    reader = cm.ExecuteReader();
-                    if (reader.HasRows == true)
-                    {
-                        while (reader.Read())
-                        {
-                            string MaTemp = reader["MaHS"].ToString();
-                            cmd.Parameters.AddWithValue("@MaHS", MaTemp);
-                        }
-                    }
-
-                    cmd.Parameters.AddWithValue("@Diem15", QLD.Diem15Ph);
-                    cmd.Parameters.AddWithValue("@Diem45", QLD.Diem45Ph);
-                    cmd.Parameters.AddWithValue("@DiemHocKy", QLD.DiemHocKy);
-                    cmd.Parameters.AddWithValue("@DiemTB", QLD.DiemTB);
-                    try
-                    {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
+        
 
         public bool Sua(QuanLyDiemDTO QLD)
         {
             string query = string.Empty;
-            query += "UPDATE tblHocSinh SET [Diem15]=@Diem15,[Diem45]=@Diem45,[DiemHocKy]=@DiemHocKy,[DiemTB]=@DiemTB  WHERE [MaHS]=@MaHocSinh";
+            query += "select a.MaHK, b.MaMonHoc " +
+                    "from tblHocKi a, tblMonHoc b " +
+                    "where a.TenHK = @TenHK and b.TenMonHoc = @TenMon";
+            string mahk = string.Empty;
+            string mamonhoc = string.Empty;
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -127,25 +88,48 @@ namespace QLTHDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-
-                    SqlCommand cm = new SqlCommand();
-
-                    cm.CommandText = "Select [MaHS] from [tblHocSinh] where [TenHocSinh]=@TenHS";
-                    cm.Parameters.AddWithValue("@TenHS", QLD.HoTen);
-                    SqlDataReader reader = null;
-                    reader = cm.ExecuteReader();
-                    if (reader.HasRows == true)
+                    cmd.Parameters.AddWithValue("@TenHK", QLD.HocKy);
+                    cmd.Parameters.AddWithValue("@TenMon", QLD.Mon);
+                    try
                     {
-                        while (reader.Read())
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
                         {
-                            string MaTemp = reader["MaHS"].ToString();
-                            cmd.Parameters.AddWithValue("@MaHS", MaTemp);
+                            while (reader.Read())
+                            {
+                                mahk = reader["MaHK"].ToString();
+                                mamonhoc = reader["MaMonHoc"].ToString();
+                            }
                         }
+                        con.Close();
+                        con.Dispose();
                     }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+
+            query = string.Empty;
+            query += "UPDATE tblDiem SET [Diem15]=@Diem15,[Diem45]=@Diem45,[DiemCuoiKi]=@DiemCuoiKi  WHERE [MaHS]=@MaHS and MaMonHoc=@MaMon and MaHK=@MaHK";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@MaHS", QLD.MaHS);
+                    cmd.Parameters.AddWithValue("@MaMon", mamonhoc);
+                    cmd.Parameters.AddWithValue("@MaHK", mahk);
                     cmd.Parameters.AddWithValue("@Diem15", QLD.Diem15Ph);
                     cmd.Parameters.AddWithValue("@Diem45", QLD.Diem45Ph);
-                    cmd.Parameters.AddWithValue("@DiemHocKy", QLD.DiemHocKy);
-                    cmd.Parameters.AddWithValue("@DiemTB", QLD.DiemTB);
+                    cmd.Parameters.AddWithValue("@DiemCuoiKi", QLD.DiemHocKy);
                     try
                     {
                         con.Open();
@@ -162,7 +146,130 @@ namespace QLTHDAL
             }
             return true;
         }
-    }
 
-       
+        public bool LamMoi(QuanLyDiemDTO QLD)
+        {
+            string query = string.Empty;
+            query += "select a.MaHK, b.MaMonHoc, c.MaHS " +
+                    "from tblHocKi a, tblMonHoc b, tblHocSinh c, tblLop d " +
+                    "where c.MaLop=d.MaLop and a.TenHK = @TenHK and b.TenMonHoc = @TenMon and d.TenLop=@TenLop";
+            string mahk = string.Empty;
+            string mamonhoc = string.Empty;
+            List<string> lsmahs = new List<string>();
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@TenHK", QLD.HocKy);
+                    cmd.Parameters.AddWithValue("@TenMon", QLD.Mon);
+                    cmd.Parameters.AddWithValue("@TenLop", QLD.Lop);
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                string mahs = string.Empty;
+                                mahk = reader["MaHK"].ToString();
+                                mamonhoc = reader["MaMonHoc"].ToString();
+                                mahs = reader["MaHS"].ToString();
+                                lsmahs.Add(mahs);
+                            }
+                        }
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            foreach (string mahs in lsmahs)
+            {
+                query = string.Empty;
+                query += "UPDATE tblDiem SET [Diem15]='0',[Diem45]='0',[DiemCuoiKi]='0' WHERE MaMonHoc=@MaMon and MaHK=@MaHK and MaHS=@MaHS";
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.CommandText = query;
+                        cmd.Parameters.AddWithValue("@MaHS", mahs);
+                        cmd.Parameters.AddWithValue("@MaMon", mamonhoc);
+                        cmd.Parameters.AddWithValue("@MaHK", mahk);
+                        try
+                        {
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                            con.Dispose();
+                        }
+                        catch (Exception ex)
+                        {
+                            con.Close();
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        public List<QuanLyDiemDTO> SelectDSMonHoc()
+        {
+            string query = string.Empty;
+            query += "Select * " +
+                "from tblMonHoc";
+
+            List<QuanLyDiemDTO> lsDSMon = new List<QuanLyDiemDTO>();
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                QuanLyDiemDTO QLD = new QuanLyDiemDTO();
+                                QLD.Mon = reader["TenMonHoc"].ToString();
+                                lsDSMon.Add(QLD);
+                            }
+                        }
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            return lsDSMon;
+        }
+
+
+    } 
 }

@@ -9,7 +9,6 @@ namespace QLTHDTO
     public class QuanLyHocSinhDTO
     {
         private string sMaHS;
-        private string sKhoi;
         private string sHoTen;
         private string sGioiTinh;
         private DateTime dtNgaySinh;
@@ -23,10 +22,10 @@ namespace QLTHDTO
         private string sTenMe;
         private string sNNMe;
         private string sUuTien;
+        private string sMaLop;
 
 
         public string MaHS { get => sMaHS; set => sMaHS = value; }
-        public string Khoi { get => sKhoi; set => sKhoi = value; }
         public string HoTen { get => sHoTen; set => sHoTen = value; }
         public string GioiTinh { get => sGioiTinh; set => sGioiTinh = value; }
         public DateTime NgaySinh { get => dtNgaySinh; set => dtNgaySinh = value; }
@@ -40,5 +39,6 @@ namespace QLTHDTO
         public string TenMe { get => sTenMe; set => sTenMe = value; }
         public string NNMe { get => sNNMe; set => sNNMe = value; }
         public string UuTien { get => sUuTien; set => sUuTien = value; }
+        public string SMaLop { get => sMaLop; set => sMaLop = value; }
     }
 }

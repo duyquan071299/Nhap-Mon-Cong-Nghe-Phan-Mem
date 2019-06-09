@@ -159,6 +159,7 @@
             this.Controls.Add(this.PnlMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.PnlMainMenu.ResumeLayout(false);
             this.ResumeLayout(false);
