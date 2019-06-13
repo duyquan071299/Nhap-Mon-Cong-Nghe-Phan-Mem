@@ -124,11 +124,26 @@ namespace QLTHDAL
                     }
                 }
             }
-            int malopmoi;
+            int temp_malopmoi;
+            string malopmoi = string.Empty;
             do
             {
-                malopmoi = ran.Next(1, 999);
-            } while (DanhSachMaLop.Contains(malopmoi.ToString()));
+                temp_malopmoi = ran.Next(1, 999);
+                if (TSDTO.STenThamSo == "Tên lớp K10")
+                {
+                    malopmoi = "L10"+temp_malopmoi.ToString();
+                }
+                if (TSDTO.STenThamSo == "Tên lớp K11")
+                {
+                    malopmoi = "L11" + temp_malopmoi.ToString();
+                }
+                if (TSDTO.STenThamSo == "Tên lớp K12")
+                {
+                    malopmoi = "L12" + temp_malopmoi.ToString();
+                }
+
+            } while (DanhSachMaLop.Contains(malopmoi));
+            
             query = string.Empty;
             query += "insert into [tblLop]";
             query += "values (@MaLop,@TenLop,@MaKhoi)";
@@ -153,7 +168,7 @@ namespace QLTHDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaLop", malopmoi.ToString());
+                    cmd.Parameters.AddWithValue("@MaLop", malopmoi);
                     cmd.Parameters.AddWithValue("@TenLop", TSDTO.SGiaTri);
                     cmd.Parameters.AddWithValue("@MaKhoi", makhoi.ToString());
                     try
@@ -293,11 +308,13 @@ namespace QLTHDAL
                     }
                 }
             }
-            int mamhmoi;
+            int temp_mamhmoi;
+            string mamhmoi=string.Empty;
             do
             {
-                mamhmoi = ran.Next(1, 999);
-            } while (DanhSachMaMonHoc.Contains(mamhmoi.ToString()));
+                temp_mamhmoi = ran.Next(1, 999);
+                mamhmoi = "MH" + temp_mamhmoi.ToString();
+            } while (DanhSachMaMonHoc.Contains(mamhmoi));
             query = string.Empty;
             query += "insert into [tblMonHoc]";
             query += "values (@MaMH,@TenMH)";
@@ -309,7 +326,7 @@ namespace QLTHDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaMH", mamhmoi.ToString());
+                    cmd.Parameters.AddWithValue("@MaMH", mamhmoi);
                     cmd.Parameters.AddWithValue("@TenMH", TSDTO.SGiaTri);
 
                     try

@@ -50,10 +50,6 @@ CREATE TABLE [dbo].[tblHocSinh]
 )
 
 
-
-
-
-
 CREATE TABLE [dbo].[tblMonHoc]
 (	
 	[MaMonHoc]	nvarchar(50) NOT NULL PRIMARY KEY,
@@ -90,8 +86,28 @@ insert into tblKhoi values ('001','K10')
 insert into tblKhoi values ('002','K11')
 insert into tblKhoi values ('003','K12')
 
+insert into tblLop values('L101','10A1','001')
+insert into tblLop values('L102','10A2','001')
+insert into tblLop values('L103','10A3','001')
+insert into tblLop values('L104','10A4','001')
+insert into tblLop values('L111','11A1','002')
+insert into tblLop values('L112','11A2','002')
+insert into tblLop values('L113','11A3','002')
+insert into tblLop values('L121','12A1','003')
+insert into tblLop values('L122','12A2','003')
+
 insert into tblHocKi values('1','HK1')
 insert into tblHocKi values('2','HK2')
+
+insert into tblMonHoc values('MH1',N'Toán')
+insert into tblMonHoc values('MH2',N'Lý')
+insert into tblMonHoc values('MH3',N'Hóa')
+insert into tblMonHoc values('MH4',N'Sinh')
+insert into tblMonHoc values('MH5',N'Sử')
+insert into tblMonHoc values('MH6',N'Địa')
+insert into tblMonHoc values('MH7',N'Văn')
+insert into tblMonHoc values('MH8',N'Đạo Đức')
+insert into tblMonHoc values('MH9',N'Thể Dục')
 
 insert into tblThamSo values('1',N'Số tuổi tối thiểu','14')
 insert into tblThamSo values('2',N'Số tuổi tối đa','18')
@@ -115,7 +131,5 @@ insert into tblThamSo values('MH6',N'Tên môn học',N'Địa')
 insert into tblThamSo values('MH7',N'Tên môn học',N'Văn')
 insert into tblThamSo values('MH8',N'Tên môn học',N'Đạo Đức')
 insert into tblThamSo values('MH9',N'Tên môn học',N'Thể Dục')
-
-
 
 

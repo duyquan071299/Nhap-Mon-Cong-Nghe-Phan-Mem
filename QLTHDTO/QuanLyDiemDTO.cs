@@ -18,6 +18,8 @@ namespace QLTHDTO
         private string fDiemHocKy;
         private float fDiemTB;
 
+        public QuanLyDiemDTO() { }
+
         public string HocKy { get => iHocKy; set => iHocKy = value; }
         public string Diem15Ph { get => fDiem15Ph; set => fDiem15Ph = value; }
         public string Diem45Ph { get => fDiem45Ph; set => fDiem45Ph = value; }

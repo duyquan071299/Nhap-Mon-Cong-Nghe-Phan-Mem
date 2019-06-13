@@ -17,6 +17,8 @@ namespace QLTHDTO
         private string sTenLop;
         private string sMaLop;
 
+        public QuanLyLopDTO() { }
+
         public string TTLop { get => sTTLop; set => sTTLop = value; }
         public string MaHS { get => sMaHS; set => sMaHS = value; }
         public string GioiTinh { get => sGioiTinh; set => sGioiTinh = value; }

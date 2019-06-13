@@ -12,6 +12,8 @@ namespace QLTHDTO
         private string sGiaTri;
         private string sGiaTriMoi;
 
+        public ThamSoDTO() { }
+
         public string STenThamSo { get => sTenThamSo; set => sTenThamSo = value; }
         public string SGiaTri { get => sGiaTri; set => sGiaTri = value; }
         public string SGiaTriMoi { get => sGiaTriMoi; set => sGiaTriMoi = value; }

@@ -35,14 +35,14 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.dtgvDanhSachLop = new System.Windows.Forms.DataGridView();
+            this.MaHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbKhoi = new System.Windows.Forms.ComboBox();
             this.lbKhoi = new System.Windows.Forms.Label();
             this.cbLop = new System.Windows.Forms.ComboBox();
             this.tbSiSo = new System.Windows.Forms.TextBox();
             this.lbSiSo = new System.Windows.Forms.Label();
-            this.MaHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachLop)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,13 +132,37 @@
             this.dtgvDanhSachLop.Size = new System.Drawing.Size(816, 211);
             this.dtgvDanhSachLop.TabIndex = 19;
             // 
+            // MaHS
+            // 
+            this.MaHS.DataPropertyName = "MaHS";
+            this.MaHS.HeaderText = "Mã học sinh";
+            this.MaHS.Name = "MaHS";
+            this.MaHS.ReadOnly = true;
+            this.MaHS.Width = 115;
+            // 
+            // Ten
+            // 
+            this.Ten.DataPropertyName = "HoTen";
+            this.Ten.HeaderText = "Tên học sinh";
+            this.Ten.Name = "Ten";
+            this.Ten.ReadOnly = true;
+            this.Ten.Width = 300;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
+            this.GioiTinh.Width = 150;
+            // 
             // cbKhoi
             // 
             this.cbKhoi.FormattingEnabled = true;
             this.cbKhoi.Items.AddRange(new object[] {
-            "10",
-            "11",
-            "12"});
+            "K10",
+            "K11",
+            "K12"});
             this.cbKhoi.Location = new System.Drawing.Point(428, 29);
             this.cbKhoi.Name = "cbKhoi";
             this.cbKhoi.Size = new System.Drawing.Size(121, 24);
@@ -160,10 +184,6 @@
             // cbLop
             // 
             this.cbLop.FormattingEnabled = true;
-            this.cbLop.Items.AddRange(new object[] {
-            "10",
-            "11",
-            "12"});
             this.cbLop.Location = new System.Drawing.Point(428, 59);
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(121, 24);
@@ -189,30 +209,6 @@
             this.lbSiSo.TabIndex = 23;
             this.lbSiSo.Text = "Sỉ số";
             this.lbSiSo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // MaHS
-            // 
-            this.MaHS.DataPropertyName = "MaHS";
-            this.MaHS.HeaderText = "Mã học sinh";
-            this.MaHS.Name = "MaHS";
-            this.MaHS.ReadOnly = true;
-            this.MaHS.Width = 115;
-            // 
-            // Ten
-            // 
-            this.Ten.DataPropertyName = "HoTen";
-            this.Ten.HeaderText = "Tên học sinh";
-            this.Ten.Name = "Ten";
-            this.Ten.ReadOnly = true;
-            this.Ten.Width = 300;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.ReadOnly = true;
-            this.GioiTinh.Width = 150;
             // 
             // ucQuanlylop
             // 

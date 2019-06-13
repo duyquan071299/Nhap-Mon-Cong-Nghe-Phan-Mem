@@ -97,17 +97,17 @@ namespace GUI
             cblop.Items.Clear();
             List<string> tenlop = new List<string>();
 
-            tenlop = quanlylop.SelectLop("10");
+            tenlop = quanlylop.SelectLop("K10");
             foreach (string temp in tenlop)
             {
                 cblop.Items.Add(temp);
             }
-            tenlop = quanlylop.SelectLop("11");
+            tenlop = quanlylop.SelectLop("K11");
             foreach (string temp in tenlop)
             {
                 cblop.Items.Add(temp);
             }
-            tenlop = quanlylop.SelectLop("12");
+            tenlop = quanlylop.SelectLop("K12");
             foreach (string temp in tenlop)
             {
                 cblop.Items.Add(temp);

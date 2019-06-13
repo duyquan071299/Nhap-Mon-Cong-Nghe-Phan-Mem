@@ -24,6 +24,7 @@ namespace QLTHDTO
         private string sUuTien;
         private string sMaLop;
 
+        public QuanLyHocSinhDTO() { }
 
         public string MaHS { get => sMaHS; set => sMaHS = value; }
         public string HoTen { get => sHoTen; set => sHoTen = value; }
