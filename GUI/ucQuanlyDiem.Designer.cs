@@ -53,6 +53,7 @@
             this.Diem15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diem45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemCuoiKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachHocSinh)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,13 +125,15 @@
             // 
             // dtgvDanhSachHocSinh
             // 
+            this.dtgvDanhSachHocSinh.AllowUserToAddRows = false;
             this.dtgvDanhSachHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDanhSachHocSinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHS,
             this.HoTen,
             this.Diem15,
             this.Diem45,
-            this.DiemCuoiKy});
+            this.DiemCuoiKy,
+            this.DiemTB});
             this.dtgvDanhSachHocSinh.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDanhSachHocSinh.Location = new System.Drawing.Point(0, 252);
             this.dtgvDanhSachHocSinh.Name = "dtgvDanhSachHocSinh";
@@ -320,6 +323,13 @@
             this.DiemCuoiKy.ReadOnly = true;
             this.DiemCuoiKy.Width = 120;
             // 
+            // DiemTB
+            // 
+            this.DiemTB.DataPropertyName = "DiemTB";
+            this.DiemTB.HeaderText = "Điểm trung bình";
+            this.DiemTB.Name = "DiemTB";
+            this.DiemTB.ReadOnly = true;
+            // 
             // ucQuanlyDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,5 +391,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Diem15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diem45;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemCuoiKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemTB;
     }
 }

@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCaoMonDAL.cs" />
+    <Compile Include="BaoCaoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -52,6 +52,7 @@
     <Compile Include="QuanLyHocSinhDAL.cs" />
     <Compile Include="QuanLyLopDAL.cs" />
     <Compile Include="QuanLyThamSoDAL.cs" />
+    <Compile Include="TraCuuDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QLTHDTO\QLTHDTO.csproj">

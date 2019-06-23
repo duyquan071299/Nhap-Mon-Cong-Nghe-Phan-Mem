@@ -25,7 +25,8 @@ CREATE TABLE [dbo].[tblLop]
 (	
 	[MaLop] nvarchar(10) NOT NULL PRIMARY KEY,
 	[TenLop] nvarchar(10) NOT NULL,		
-	[MaKhoi] nvarchar(5) not null, 
+	[MaKhoi] nvarchar(5) not null,
+	[SiSo] int not null, 
 	foreign key ([MaKhoi]) references [tblKhoi]([MaKhoi])
 )
 
@@ -70,6 +71,7 @@ CREATE TABLE [dbo].[tblDiem]
 	[Diem15] float not null,
 	[Diem45] float not null,
 	[DiemCuoiKi] float not null,
+	[DiemTrungBinh] float not null,
 	FOREIGN KEY (MaMonHoc) REFERENCES tblMonHoc(MaMonHoc),
 	FOREIGN KEY (MaHS) REFERENCES tblHocSinh(MaHS),
 	FOREIGN KEY (MaHK) REFERENCES tblHocKi(MaHK),
@@ -86,15 +88,15 @@ insert into tblKhoi values ('001','K10')
 insert into tblKhoi values ('002','K11')
 insert into tblKhoi values ('003','K12')
 
-insert into tblLop values('L101','10A1','001')
-insert into tblLop values('L102','10A2','001')
-insert into tblLop values('L103','10A3','001')
-insert into tblLop values('L104','10A4','001')
-insert into tblLop values('L111','11A1','002')
-insert into tblLop values('L112','11A2','002')
-insert into tblLop values('L113','11A3','002')
-insert into tblLop values('L121','12A1','003')
-insert into tblLop values('L122','12A2','003')
+insert into tblLop values('L101','10A1','001','0')
+insert into tblLop values('L102','10A2','001','0')
+insert into tblLop values('L103','10A3','001','0')
+insert into tblLop values('L104','10A4','001','0')
+insert into tblLop values('L111','11A1','002','0')
+insert into tblLop values('L112','11A2','002','0')
+insert into tblLop values('L113','11A3','002','0')
+insert into tblLop values('L121','12A1','003','0')
+insert into tblLop values('L122','12A2','003','0')
 
 insert into tblHocKi values('1','HK1')
 insert into tblHocKi values('2','HK2')
@@ -113,15 +115,15 @@ insert into tblThamSo values('1',N'Số tuổi tối thiểu','14')
 insert into tblThamSo values('2',N'Số tuổi tối đa','18')
 insert into tblThamSo values('3',N'Sỉ số lớp tối đa','40')
 insert into tblThamSo values('4',N'Điểm đạt môn','5')
-insert into tblThamSo values('K101',N'Tên lớp K10','10A1')
-insert into tblThamSo values('K102',N'Tên lớp K10','10A2')
-insert into tblThamSo values('K103',N'Tên lớp K10','10A3')
-insert into tblThamSo values('K104',N'Tên lớp K10','10A4')
-insert into tblThamSo values('K111',N'Tên lớp K11','11A1')
-insert into tblThamSo values('K112',N'Tên lớp K11','11A2')
-insert into tblThamSo values('K113',N'Tên lớp K11','11A3')
-insert into tblThamSo values('K121',N'Tên lớp K12','12A1')
-insert into tblThamSo values('K122',N'Tên lớp K12','12A2')
+insert into tblThamSo values('L101',N'Tên lớp K10','10A1')
+insert into tblThamSo values('L102',N'Tên lớp K10','10A2')
+insert into tblThamSo values('L103',N'Tên lớp K10','10A3')
+insert into tblThamSo values('L104',N'Tên lớp K10','10A4')
+insert into tblThamSo values('L111',N'Tên lớp K11','11A1')
+insert into tblThamSo values('L112',N'Tên lớp K11','11A2')
+insert into tblThamSo values('L113',N'Tên lớp K11','11A3')
+insert into tblThamSo values('L121',N'Tên lớp K12','12A1')
+insert into tblThamSo values('L122',N'Tên lớp K12','12A2')
 insert into tblThamSo values('MH1',N'Tên môn học',N'Toán')
 insert into tblThamSo values('MH2',N'Tên môn học',N'Lý')
 insert into tblThamSo values('MH3',N'Tên môn học',N'Hóa')
@@ -131,5 +133,3 @@ insert into tblThamSo values('MH6',N'Tên môn học',N'Địa')
 insert into tblThamSo values('MH7',N'Tên môn học',N'Văn')
 insert into tblThamSo values('MH8',N'Tên môn học',N'Đạo Đức')
 insert into tblThamSo values('MH9',N'Tên môn học',N'Thể Dục')
-
-

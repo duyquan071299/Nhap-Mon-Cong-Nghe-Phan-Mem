@@ -10,7 +10,6 @@ namespace QLTHDAL
 {
     public class QuanLyThamSoDAL
     {
-        private Random ran = new Random();
         private string connectionString;
         public QuanLyThamSoDAL()
         {
@@ -52,6 +51,7 @@ namespace QLTHDAL
                     catch (Exception ex)
                     {
                         con.Close();
+                        return false;
                     }
                 }
             }
@@ -121,14 +121,15 @@ namespace QLTHDAL
                     catch (Exception ex)
                     {
                         con.Close();
+                        return false;
                     }
                 }
             }
-            int temp_malopmoi;
+            int temp_malopmoi = 0;
             string malopmoi = string.Empty;
             do
             {
-                temp_malopmoi = ran.Next(1, 999);
+                temp_malopmoi++;
                 if (TSDTO.STenThamSo == "Tên lớp K10")
                 {
                     malopmoi = "L10"+temp_malopmoi.ToString();
@@ -146,7 +147,7 @@ namespace QLTHDAL
             
             query = string.Empty;
             query += "insert into [tblLop]";
-            query += "values (@MaLop,@TenLop,@MaKhoi)";
+            query += "values (@MaLop,@TenLop,@MaKhoi,'0')";
             string makhoi = string.Empty;
             if (TSDTO.STenThamSo == "Tên lớp K10")
             {
@@ -185,63 +186,11 @@ namespace QLTHDAL
                     }
                 }
             }
-            query = string.Empty;
-            query += "select [MaTS] from [tblThamSo]";
-            List<QuanLyLopDTO> lsDSL = new List<QuanLyLopDTO>();
-            string mats = string.Empty;
-            List<string> DanhSachMaTS = new List<string>();
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-
-                    try
-                    {
-                        con.Open();
-                        SqlDataReader reader = null;
-                        reader = cmd.ExecuteReader();
-                        if (reader.HasRows == true)
-                        {
-                            while (reader.Read())
-                            {
-                                mats = reader["MaTS"].ToString();
-                                DanhSachMaTS.Add(mats);
-                            }
-                        }
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                    }
-                }
-            }
-            int matsmoi;
-            do
-            {
-                matsmoi = ran.Next(1, 999);
-            } while (DanhSachMaTS.Contains(matsmoi.ToString()));
+           
             query = string.Empty;
             query += "insert into [tblThamSo]";
             query += "values (@MaTS,@TenTS,@GiaTriTS)";
-            string key = string.Empty;
-            if(TSDTO.STenThamSo=="Tên lớp K10")
-            {
-                key = "K10";
-            }
-            if (TSDTO.STenThamSo == "Tên lớp K11")
-            {
-                key = "K11";
-            }
-            if (TSDTO.STenThamSo == "Tên lớp K12")
-            {
-                key = "K12";
-            }
+            
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -250,7 +199,7 @@ namespace QLTHDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaTS", key+matsmoi.ToString());
+                    cmd.Parameters.AddWithValue("@MaTS", malopmoi);
                     cmd.Parameters.AddWithValue("@TenTS", TSDTO.STenThamSo);
                     cmd.Parameters.AddWithValue("@GiaTriTS", TSDTO.SGiaTri);
                     try
@@ -308,11 +257,11 @@ namespace QLTHDAL
                     }
                 }
             }
-            int temp_mamhmoi;
+            int temp_mamhmoi = 0;
             string mamhmoi=string.Empty;
             do
             {
-                temp_mamhmoi = ran.Next(1, 999);
+                temp_mamhmoi++;
                 mamhmoi = "MH" + temp_mamhmoi.ToString();
             } while (DanhSachMaMonHoc.Contains(mamhmoi));
             query = string.Empty;
@@ -343,47 +292,7 @@ namespace QLTHDAL
                     }
                 }
             }
-            query = string.Empty;
-            query += "select [MaTS] from [tblThamSo]";
-            List<QuanLyLopDTO> lsDSL = new List<QuanLyLopDTO>();
-            string mats = string.Empty;
-            List<string> DanhSachMaTS = new List<string>();
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-
-                    try
-                    {
-                        con.Open();
-                        SqlDataReader reader = null;
-                        reader = cmd.ExecuteReader();
-                        if (reader.HasRows == true)
-                        {
-                            while (reader.Read())
-                            {
-                                mats = reader["MaTS"].ToString();
-                                DanhSachMaTS.Add(mats);
-                            }
-                        }
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                    }
-                }
-            }
-            int matsmoi;
-            do
-            {
-                matsmoi = ran.Next(1, 999);
-            } while (DanhSachMaTS.Contains(matsmoi.ToString()));
+            
             query = string.Empty;
             query += "insert into [tblThamSo]";
             query += "values (@MaTS,@TenTS,@GiaTriTS)";
@@ -395,7 +304,7 @@ namespace QLTHDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaTS", "MH"+matsmoi.ToString());
+                    cmd.Parameters.AddWithValue("@MaTS", mamhmoi.ToString());
                     cmd.Parameters.AddWithValue("@TenTS", TSDTO.STenThamSo);
                     cmd.Parameters.AddWithValue("@GiaTriTS", TSDTO.SGiaTri);
                     try
@@ -495,34 +404,7 @@ namespace QLTHDAL
         public bool SuaLop(ThamSoDTO TSDTO)
         {
             string query = string.Empty;
-            query += "UPDATE [tblThamSo] SET [GiaTriTS]=@GiaTriMoi  WHERE [TenTS]=@TenTS and [GiaTriTS]=@GiaTriCu";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@TenTS", TSDTO.STenThamSo);
-                    cmd.Parameters.AddWithValue("@GiaTriCu", TSDTO.SGiaTri);
-                    cmd.Parameters.AddWithValue("@GiaTriMoi", TSDTO.SGiaTriMoi);
-                    try
-                    {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                        return false;
-                    }
-                }
-            }
-
-            query = string.Empty;
+            query += "UPDATE [tblThamSo] SET [GiaTriTS]=@GiaTriMoi  WHERE [TenTS]=@TenTS and [GiaTriTS]=@GiaTriCu ";
             query += "UPDATE [tblLop] SET [TenLop]=@GiaTriMoi  WHERE [TenLop]=@GiaTriCu";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -532,6 +414,7 @@ namespace QLTHDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@TenTS", TSDTO.STenThamSo);
                     cmd.Parameters.AddWithValue("@GiaTriCu", TSDTO.SGiaTri);
                     cmd.Parameters.AddWithValue("@GiaTriMoi", TSDTO.SGiaTriMoi);
                     try
@@ -548,13 +431,16 @@ namespace QLTHDAL
                     }
                 }
             }
+
+            
             return true;
         }
 
         public bool SuaMonHoc(ThamSoDTO TSDTO)
         {
             string query = string.Empty;
-            query += "UPDATE [tblThamSo] SET [GiaTriTS]=@GiaTriMoi  WHERE [TenTS]=@TenTS and [GiaTriTS]=@GiaTriCu";
+            query += "UPDATE [tblThamSo] SET [GiaTriTS]=@GiaTriMoi  WHERE [TenTS]=@TenTS and [GiaTriTS]=@GiaTriCu ";
+            query += "UPDATE [tblMonHoc] SET [TenMonHoc]=@GiaTriMoi  WHERE [TenMonHoc]=@GiaTriCu";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -581,41 +467,14 @@ namespace QLTHDAL
                 }
             }
 
-            query = string.Empty;
-            query += "UPDATE [tblMonHoc] SET [TenMonHoc]=@GiaTriMoi  WHERE [TenMonHoc]=@GiaTriCu";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@GiaTriCu", TSDTO.SGiaTri);
-                    cmd.Parameters.AddWithValue("@GiaTriMoi", TSDTO.SGiaTriMoi);
-                    try
-                    {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                        return false;
-                    }
-                }
-            }
+            
             return true;
         }
-
-
-
+        
         public bool Xoa(ThamSoDTO TSDTO)
         {
             string query = string.Empty;
-            query += "select [MaTS] from [tblThamSo] where [TenTS]=@TenThamSo and [GiaTriTS]=@GiaTriTS ";
+            query += "delete from [tblThamSo] where [TenTS]=@TenThamSo and [GiaTriTS]=@GiaTriTS ";
             string mats = string.Empty;
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -627,160 +486,6 @@ namespace QLTHDAL
                     cmd.CommandText = query;
                     cmd.Parameters.AddWithValue("@TenThamSo", TSDTO.STenThamSo);
                     cmd.Parameters.AddWithValue("@GiaTriTS", TSDTO.SGiaTri);
-                    try
-                    {
-                        con.Open();
-                        SqlDataReader reader = null;
-                        reader = cmd.ExecuteReader();
-                        if (reader.HasRows == true)
-                        {
-                            while (reader.Read())
-                            {
-                                mats = reader["MaTS"].ToString();
-                            }
-                        }
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                    }
-                }
-            }
-            query = string.Empty;
-            query += "DELETE FROM [tblThamSo] WHERE [MaTS] = @MaThamSo";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaThamSo", mats);
-                    try
-                    {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-
-        public bool XoaLop(ThamSoDTO TSDTO)
-        {
-            string query = string.Empty;
-            query += "select [MaLop] from [tblLop] where [TenLop]=@TenLop";
-            string malop = string.Empty;
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@TenLop", TSDTO.SGiaTri);
-                    try
-                    {
-                        con.Open();
-                        SqlDataReader reader = null;
-                        reader = cmd.ExecuteReader();
-                        if (reader.HasRows == true)
-                        {
-                            while (reader.Read())
-                            {
-                                malop = reader["MaLop"].ToString();
-                            }
-                        }
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                    }
-                }
-            }
-            query = string.Empty;
-            query += "delete from [tbllop] where [MaLop]=@MaLop";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaLop", malop);
-                    try
-                    {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                        return false;
-                    }
-                }
-            }
-            query = string.Empty;
-            query += "select [MaTS] from [tblThamSo] where [TenTS]=@TenThamSo and [GiaTriTS]=@GiaTriTS ";
-            string mats = string.Empty;
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@TenThamSo", TSDTO.STenThamSo);
-                    cmd.Parameters.AddWithValue("@GiaTriTS", TSDTO.SGiaTri);
-                    try
-                    {
-                        con.Open();
-                        SqlDataReader reader = null;
-                        reader = cmd.ExecuteReader();
-                        if (reader.HasRows == true)
-                        {
-                            while (reader.Read())
-                            {
-                                mats = reader["MaTS"].ToString();
-                            }
-                        }
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                    }
-                }
-            }
-            query = string.Empty;
-            query += "DELETE FROM [tblThamSo] WHERE [MaTS] = @MaThamSo";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaThamSo", mats);
                     try
                     {
                         con.Open();
@@ -796,15 +501,14 @@ namespace QLTHDAL
                 }
             }
             
-
             return true;
         }
 
-        public bool XoaMonHoc(ThamSoDTO TSDTO)
+        public bool XoaLop(ThamSoDTO TSDTO)
         {
             string query = string.Empty;
-            query += "select [MaMonHoc] from [tblMonHoc] where [TenMonHoc]=@TenMH";
-            string mamh = string.Empty;
+            query += "delete from [tblLop] where [TenLop]=@TenLop";
+            string malop = string.Empty;
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -813,39 +517,7 @@ namespace QLTHDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@TenMH", TSDTO.SGiaTri);
-                    try
-                    {
-                        con.Open();
-                        SqlDataReader reader = null;
-                        reader = cmd.ExecuteReader();
-                        if (reader.HasRows == true)
-                        {
-                            while (reader.Read())
-                            {
-                                mamh = reader["MaMonHoc"].ToString();
-                            }
-                        }
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                    }
-                }
-            }
-            query = string.Empty;
-            query += "delete from [tblMonHoc] where [MaMonHoc]=@MaMH";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaMH", mamh);
+                    cmd.Parameters.AddWithValue("@TenLop", TSDTO.SGiaTri);
                     try
                     {
                         con.Open();
@@ -860,8 +532,67 @@ namespace QLTHDAL
                     }
                 }
             }
+          
             query = string.Empty;
-            query += "select [MaTS] from [tblThamSo] where [TenTS]=@TenThamSo and [GiaTriTS]=@GiaTriTS ";
+            query += "delete from [tblThamSo] where [TenTS]=@TenThamSo and [GiaTriTS]=@GiaTriTS ";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@TenThamSo", TSDTO.STenThamSo);
+                    cmd.Parameters.AddWithValue("@GiaTriTS", TSDTO.SGiaTri);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+           
+            return true;
+        }
+
+        public bool XoaMonHoc(ThamSoDTO TSDTO)
+        {
+            string query = string.Empty;
+            query += "delete from [tblMonHoc] where [TenMonHoc]=@TenMH";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@TenMH", TSDTO.SGiaTri);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+
+            query = string.Empty;
+            query += "delete from [tblThamSo] where [TenTS]=@TenThamSo and [GiaTriTS]=@GiaTriTS ";
             string mats = string.Empty;
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -876,38 +607,6 @@ namespace QLTHDAL
                     try
                     {
                         con.Open();
-                        SqlDataReader reader = null;
-                        reader = cmd.ExecuteReader();
-                        if (reader.HasRows == true)
-                        {
-                            while (reader.Read())
-                            {
-                                mats = reader["MaTS"].ToString();
-                            }
-                        }
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                    }
-                }
-            }
-            query = string.Empty;
-            query += "DELETE FROM [tblThamSo] WHERE [MaTS] = @MaThamSo";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaThamSo", mats);
-                    try
-                    {
-                        con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
                         con.Dispose();
@@ -919,6 +618,7 @@ namespace QLTHDAL
                     }
                 }
             }
+            
 
 
             return true;

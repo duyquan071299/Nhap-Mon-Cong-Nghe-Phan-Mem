@@ -189,18 +189,18 @@ namespace GUI
         {
             if(dang_sua)
             {
-                int temp;
-                if (int.TryParse(tbDiem15.Text, out temp) == false || int.Parse(tbDiem15.Text) < 0 || int.Parse(tbDiem15.Text) > 10)
+                float temp;
+                if (float.TryParse(tbDiem15.Text, out temp) == false || float.Parse(tbDiem15.Text) < 0 || float.Parse(tbDiem15.Text) > 10)
                 {
                     MessageBox.Show("Điểm 15p không hợp lệ");
                     return;
                 }
-                if (int.TryParse(tbDiem45.Text, out temp) == false || int.Parse(tbDiem45.Text) < 0 || int.Parse(tbDiem45.Text) > 10)
+                if (float.TryParse(tbDiem45.Text, out temp) == false || float.Parse(tbDiem45.Text) < 0 || float.Parse(tbDiem45.Text) > 10)
                 {
                     MessageBox.Show("Điểm 45p không hợp lệ");
                     return;
                 }
-                if (int.TryParse(tbDiemCuoiKy.Text, out temp) == false || int.Parse(tbDiemCuoiKy.Text) < 0 || int.Parse(tbDiemCuoiKy.Text) > 10)
+                if (float.TryParse(tbDiemCuoiKy.Text, out temp) == false || float.Parse(tbDiemCuoiKy.Text) < 0 || float.Parse(tbDiemCuoiKy.Text) > 10)
                 {
                     MessageBox.Show("Điểm cuối kỳ không hợp lệ");
                     return;

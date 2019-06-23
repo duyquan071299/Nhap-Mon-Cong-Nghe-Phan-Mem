@@ -16,7 +16,7 @@ namespace QLTHDTO
         private string fDiem15Ph;
         private string fDiem45Ph;
         private string fDiemHocKy;
-        private float fDiemTB;
+        private string fDiemTB;
 
         public QuanLyDiemDTO() { }
 
@@ -27,7 +27,7 @@ namespace QLTHDTO
         public string Lop { get => sLop; set => sLop = value; }
         public string Mon { get => sMon; set => sMon = value; }
         public string HoTen { get => sHoTen; set => sHoTen = value; }
-        public float DiemTB { get => fDiemTB; set => fDiemTB = value; }
+        public string DiemTB { get => fDiemTB; set => fDiemTB = value; }
         public string MaHS { get => sMaHS; set => sMaHS = value; }
     }
 }

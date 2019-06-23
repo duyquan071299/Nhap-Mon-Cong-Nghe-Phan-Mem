@@ -18,18 +18,19 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+        
+        private int dtgv_hang = -1;
         private ucThamso a = new ucThamso();
         private QuanLyLopBUS quanlylop;
         private QuanLyHocSinhBUS quanlyhocsinh;
-        private DanhSachHocSinh danhSachHS;
-        private int dtgv_hang = -1;
+
         private void ucQuanlylop_Load(object sender, EventArgs e)
         {
-            danhSachHS = new DanhSachHocSinh();
-            danhSachHS.Show();
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
             quanlylop = new QuanLyLopBUS();
             quanlyhocsinh = new QuanLyHocSinhBUS();
+            Load_DanhSachHocSinhChuaCoLop();
         }
 
         private void Load_DanhSachHocSinh(string tenlop)
@@ -49,11 +50,12 @@ namespace GUI
             myCurrencyManager.Refresh();
             tbSiSo.Text = dtgvDanhSachLop.RowCount.ToString();
         }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             a.Load_DanhSachThamSo();
             List<string> danhsachhocsinhchuacolop = new List<string>();
-            foreach(DataGridViewRow temp in danhSachHS.dtgvDanhSachHS.Rows)
+            foreach(DataGridViewRow temp in dtgvDSHSChuaCoLop.Rows)
             {
                 danhsachhocsinhchuacolop.Add(temp.Cells[0].Value.ToString());
             }
@@ -92,7 +94,7 @@ namespace GUI
                     MessageBox.Show("thêm học sinh thành công");
                 }
             }
-            danhSachHS.LoadDanhSachHS();
+            Load_DanhSachHocSinhChuaCoLop();
             Load_DanhSachHocSinh(cbLop.Text);
 
         }
@@ -112,6 +114,7 @@ namespace GUI
         private void cbLop_SelectedIndexChanged(object sender, EventArgs e)
         {
             tbMaHS.Enabled = true;
+            btnThem.Enabled = true;
             Load_DanhSachHocSinh(cbLop.Text);
         }
 
@@ -119,6 +122,7 @@ namespace GUI
         {
             QuanLyLopDTO HS = new QuanLyLopDTO();
             HS.MaHS = tbMaHS.Text;
+            HS.TenLop = cbLop.Text;
             List<string> danhsachlop = new List<string>();
             foreach(DataGridViewRow temp in dtgvDanhSachLop.Rows)
             {
@@ -141,8 +145,74 @@ namespace GUI
                     return;
                 }
             }
-            danhSachHS.LoadDanhSachHS();
+            Load_DanhSachHocSinhChuaCoLop();
             Load_DanhSachHocSinh(cbLop.Text);
         }
+
+        private void dtgvDanhSachLop_SelectionChanged(object sender, EventArgs e)
+        {
+            
+            if (dtgvDanhSachLop.CurrentCell == null)
+            {
+                dtgv_hang = -1;
+            }
+            else
+                dtgv_hang = dtgvDanhSachLop.CurrentCell.RowIndex;
+            if (dtgv_hang >= 0)
+            {
+                if (dtgvDanhSachLop.Rows[dtgv_hang].Cells[0].Value != null)
+                {
+                    tbMaHS.Text = dtgvDanhSachLop.Rows[dtgv_hang].Cells[0].Value.ToString();
+                }
+                btnXoa.Enabled = true;
+                btnThem.Enabled = false;
+
+            }
+        }
+
+        private void dtgvDSHSChuaCoLop_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvDSHSChuaCoLop.CurrentCell == null)
+            {
+                dtgv_hang = -1;
+            }
+            else
+                dtgv_hang = dtgvDSHSChuaCoLop.CurrentCell.RowIndex;
+            if (dtgv_hang >= 0)
+            {
+                if (dtgvDSHSChuaCoLop.Rows[dtgv_hang].Cells[0].Value != null)
+                {
+                    tbMaHS.Text = dtgvDSHSChuaCoLop.Rows[dtgv_hang].Cells[0].Value.ToString();
+                }
+
+                if (cbLop.Text != "")
+                {
+                    btnThem.Enabled = true;
+                }
+                btnXoa.Enabled = false;
+
+            }
+        }
+
+        private void Load_DanhSachHocSinhChuaCoLop()
+        {
+            List<QuanLyHocSinhDTO> DanhSachHocSinh = quanlyhocsinh.SelectHSChuaCoLoP();
+            if (DanhSachHocSinh == null)
+            {
+                MessageBox.Show("Có lỗi khi lấy Món ăn từ DB");
+                return;
+            }
+            dtgvDSHSChuaCoLop.DataSource = null;
+
+            dtgvDSHSChuaCoLop.AutoGenerateColumns = false;
+            dtgvDSHSChuaCoLop.AllowUserToAddRows = false;
+            dtgvDSHSChuaCoLop.DataSource = DanhSachHocSinh;
+
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvDSHSChuaCoLop.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        
     }
 }

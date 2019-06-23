@@ -11,15 +11,19 @@ namespace QLTHDTO
         private string sMon;
         private string sHocKy;
         private string sLop;
-        private int iSiSo;
-        private int iSLDat;
-        private float fTiLeDat;
+        private string iSiSo;
+        private string iSLDat;
+        private string fTiLeDat;
+        private string sDiemDat;
+
+        public BaoCaoMonDTO() { }
 
         public string HocKy { get => sHocKy; set => sHocKy = value; }
         public string Mon { get => sMon; set => sMon = value; }
         public string SLop { get => sLop; set => sLop = value; }
-        public int ISiSo { get => iSiSo; set => iSiSo = value; }
-        public int ISLDat { get => iSLDat; set => iSLDat = value; }
-        public float FTiLeDat { get => fTiLeDat; set => fTiLeDat = value; }
+        public string ISiSo { get => iSiSo; set => iSiSo = value; }
+        public string ISLDat { get => iSLDat; set => iSLDat = value; }
+        public string FTiLeDat { get => fTiLeDat; set => fTiLeDat = value; }
+        public string DiemDat { get => sDiemDat; set => sDiemDat = value; }
     }
 }

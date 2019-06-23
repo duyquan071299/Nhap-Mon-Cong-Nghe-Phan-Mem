@@ -16,12 +16,7 @@ namespace QLTHBUS
         {
             qldDAL = new QuanLyDiemDAL();
         }
-
-        //public bool Them(QuanLyDiemDTO QLD)
-        //{
-        //    bool re = qldDAL.Them(QLD);
-        //    return re;
-        //}
+        
 
         public bool Sua(QuanLyDiemDTO QLD)
         {

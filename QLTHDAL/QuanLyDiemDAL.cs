@@ -22,7 +22,7 @@ namespace QLTHDAL
         public List<QuanLyDiemDTO> SelectHS(QuanLyDiemDTO qldDTO)
         {
             string query = string.Empty;
-            query += "Select a.MaHS, a.TenHocSinh,c.Diem15,c.Diem45,c.DiemCuoiKi " +
+            query += "Select a.MaHS, a.TenHocSinh,c.Diem15,c.Diem45,c.DiemCuoiKi, c.DiemTrungBinh " +
                     "from tblHocSinh a,tblLop b, tblDiem c, tblMonHoc d, tblHocKi e" +
                     " where a.MaLop = b.MaLop and a.MaHS = c.MaHS and c.MaMonHoc = d.MaMonHoc and c.MaHK = e.MaHK "+
                     "and b.TenLop = @TenLop and e.TenHK = @TenHK and d.TenMonHoc = @TenMon";
@@ -55,6 +55,7 @@ namespace QLTHDAL
                                 QLD.Diem15Ph = reader["Diem15"].ToString();
                                 QLD.Diem45Ph = reader["Diem45"].ToString();
                                 QLD.DiemHocKy = reader["DiemCuoiKi"].ToString();
+                                QLD.DiemTB = reader["DiemTrungBinh"].ToString();
                                 lsQLD.Add(QLD);
                             }
                         }
@@ -115,7 +116,7 @@ namespace QLTHDAL
             }
 
             query = string.Empty;
-            query += "UPDATE tblDiem SET [Diem15]=@Diem15,[Diem45]=@Diem45,[DiemCuoiKi]=@DiemCuoiKi  WHERE [MaHS]=@MaHS and MaMonHoc=@MaMon and MaHK=@MaHK";
+            query += "UPDATE tblDiem SET [Diem15]=@Diem15,[Diem45]=@Diem45,[DiemCuoiKi]=@DiemCuoiKi,[DiemTrungBinh]=(@Diem15 + @Diem45 * 2 + @DiemCuoiKi * 3)/6   WHERE [MaHS]=@MaHS and MaMonHoc=@MaMon and MaHK=@MaHK";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -127,9 +128,9 @@ namespace QLTHDAL
                     cmd.Parameters.AddWithValue("@MaHS", QLD.MaHS);
                     cmd.Parameters.AddWithValue("@MaMon", mamonhoc);
                     cmd.Parameters.AddWithValue("@MaHK", mahk);
-                    cmd.Parameters.AddWithValue("@Diem15", QLD.Diem15Ph);
-                    cmd.Parameters.AddWithValue("@Diem45", QLD.Diem45Ph);
-                    cmd.Parameters.AddWithValue("@DiemCuoiKi", QLD.DiemHocKy);
+                    cmd.Parameters.AddWithValue("@Diem15", float.Parse(QLD.Diem15Ph));
+                    cmd.Parameters.AddWithValue("@Diem45", float.Parse(QLD.Diem45Ph));
+                    cmd.Parameters.AddWithValue("@DiemCuoiKi", float.Parse(QLD.DiemHocKy));
                     try
                     {
                         con.Open();
@@ -196,7 +197,7 @@ namespace QLTHDAL
             foreach (string mahs in lsmahs)
             {
                 query = string.Empty;
-                query += "UPDATE tblDiem SET [Diem15]='0',[Diem45]='0',[DiemCuoiKi]='0' WHERE MaMonHoc=@MaMon and MaHK=@MaHK and MaHS=@MaHS";
+                query += "UPDATE tblDiem SET [Diem15]='0',[Diem45]='0',[DiemCuoiKi]='0',[DiemTrungBinh]='0' WHERE MaMonHoc=@MaMon and MaHK=@MaHK and MaHS=@MaHS";
                 using (SqlConnection con = new SqlConnection(ConnectionString))
                 {
 

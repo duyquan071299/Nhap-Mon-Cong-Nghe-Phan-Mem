@@ -151,6 +151,7 @@ namespace QLTHDAL
                     catch (Exception ex)
                     {
                         con.Close();
+                        return false;
                     }
                 }
             }
@@ -185,9 +186,7 @@ namespace QLTHDAL
                 }
             }
             query = string.Empty;
-            query += "select * from tblDiem";
-            List<string> dsmabangdiem = new List<string>();
-
+            query += "update [tblLop] set SiSo=SiSo + 1 where [MaLop]=@MaLop";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -196,21 +195,11 @@ namespace QLTHDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-
+                    cmd.Parameters.AddWithValue("@MaLop", QLL.MaLop);
                     try
                     {
                         con.Open();
-                        SqlDataReader reader = null;
-                        reader = cmd.ExecuteReader();
-                        if (reader.HasRows == true)
-                        {
-                            while (reader.Read())
-                            {
-                                string mabangdiem = string.Empty;
-                                mabangdiem = reader["MaBangDiem"].ToString();
-                                dsmabangdiem.Add(mabangdiem);
-                            }
-                        }
+                        cmd.ExecuteNonQuery();
                         con.Close();
                         con.Dispose();
                     }
@@ -221,8 +210,7 @@ namespace QLTHDAL
                     }
                 }
             }
-            Random ran = new Random();
-            
+
             query = string.Empty;
             query += "Select * " +
                 "from tblMonHoc";
@@ -262,22 +250,59 @@ namespace QLTHDAL
                     }
                 }
             }
-            int mabangdiemmoi;
-            int mabangdiemmoi2;
+            int mabangdiemmoi = 0;
+            int mabangdiemmoi2 = 1;
             foreach (string mamonhoc in lsMaMon)
             {
+                query = string.Empty;
+                query += "select * from tblDiem";
+                List<string> dsmabangdiem = new List<string>();
+
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.CommandText = query;
+
+                        try
+                        {
+                            con.Open();
+                            SqlDataReader reader = null;
+                            reader = cmd.ExecuteReader();
+                            if (reader.HasRows == true)
+                            {
+                                while (reader.Read())
+                                {
+                                    string mabangdiem = string.Empty;
+                                    mabangdiem = reader["MaBangDiem"].ToString();
+                                    dsmabangdiem.Add(mabangdiem);
+                                }
+                            }
+                            con.Close();
+                            con.Dispose();
+                        }
+                        catch (Exception ex)
+                        {
+                            con.Close();
+                            return false;
+                        }
+                    }
+                }
                 do
                 {
-                    mabangdiemmoi = ran.Next(1, 999);
+                    mabangdiemmoi++;
                 } while (dsmabangdiem.Contains(mabangdiemmoi.ToString()));
                 do
                 {
-                    mabangdiemmoi2 = ran.Next(1, 999);
+                    mabangdiemmoi2++;
                 } while (dsmabangdiem.Contains(mabangdiemmoi2.ToString()) || mabangdiemmoi2 == mabangdiemmoi);
                 query = string.Empty;
-                query += "insert into tblDiem values(@MaBangDiem,@MaHS,@MaMonHoc,'1','0','0','0')";
+                query += "insert into tblDiem values(@MaBangDiem,@MaHS,@MaMonHoc,'1','0','0','0','0') ";
 
-                query += "insert into tblDiem values(@MaBangDiem2,@MaHS,@MaMonHoc,'2','0','0','0')";
+                query += "insert into tblDiem values(@MaBangDiem2,@MaHS,@MaMonHoc,'2','0','0','0','0')";
                 using (SqlConnection con = new SqlConnection(ConnectionString))
                 {
 
@@ -372,6 +397,31 @@ namespace QLTHDAL
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
                     cmd.Parameters.AddWithValue("@MaHocSinh", QLL.MaHS);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            query = string.Empty;
+            query += "update [tblLop] set SiSo=SiSo - 1 where [TenLop]=@TenLop";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@TenLop", QLL.TenLop);
                     try
                     {
                         con.Open();

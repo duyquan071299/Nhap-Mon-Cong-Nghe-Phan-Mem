@@ -6,22 +6,40 @@ using System.Threading.Tasks;
 
 namespace QLTHDTO
 {
-    class TraCuuTTHSDTO
+    public class TraCuuTTHSDTO
     {
-        private string sMSHocSinh;
-        private string sHoTenHS;
-        private string sLop;
+        private string sMaHS;
+        private string sHoTen;
         private string sGioiTinh;
-        private string sDiaChi;
-        private string sSoDienThoai;
         private DateTime dtNgaySinh;
+        private string sNoiSinh;
+        private string sNguyenQuan;
+        private string sDanToc;
+        private string sTonGiao;
+        private string sHoKhauTT;
+        private string sTenCha;
+        private string sNNCha;
+        private string sTenMe;
+        private string sNNMe;
+        private string sUuTien;
+        private string sTenLop;
 
-        public string MSHocSinh { get => sMSHocSinh; set => sMSHocSinh = value; }
-        public string HoTenHS { get => sHoTenHS; set => sHoTenHS = value; }
-        public string Lop { get => sLop; set => sLop = value; }
+        public TraCuuTTHSDTO() { }
+
+        public string MaHS { get => sMaHS; set => sMaHS = value; }
+        public string HoTen { get => sHoTen; set => sHoTen = value; }
         public string GioiTinh { get => sGioiTinh; set => sGioiTinh = value; }
-        public string DiaChi { get => sDiaChi; set => sDiaChi = value; }
-        public string SoDienThoai { get => sSoDienThoai; set => sSoDienThoai = value; }
         public DateTime NgaySinh { get => dtNgaySinh; set => dtNgaySinh = value; }
+        public string NoiSinh { get => sNoiSinh; set => sNoiSinh = value; }
+        public string NguyenQuan { get => sNguyenQuan; set => sNguyenQuan = value; }
+        public string DanToc { get => sDanToc; set => sDanToc = value; }
+        public string TonGiao { get => sTonGiao; set => sTonGiao = value; }
+        public string HoKhauTT { get => sHoKhauTT; set => sHoKhauTT = value; }
+        public string TenCha { get => sTenCha; set => sTenCha = value; }
+        public string NNCha { get => sNNCha; set => sNNCha = value; }
+        public string TenMe { get => sTenMe; set => sTenMe = value; }
+        public string NNMe { get => sNNMe; set => sNNMe = value; }
+        public string UuTien { get => sUuTien; set => sUuTien = value; }
+        public string Lop { get => sTenLop; set => sTenLop = value; }
     }
 }

@@ -376,7 +376,7 @@ namespace GUI
                 MessageBox.Show("Tham số không thể xóa");
                 return;
             }
-            if(tsdto.STenThamSo=="Tên lớp K10" || tsdto.STenThamSo == "Tên lớp K11" || tsdto.STenThamSo == "Tên lớp K12")
+            else if(tsdto.STenThamSo=="Tên lớp K10" || tsdto.STenThamSo == "Tên lớp K11" || tsdto.STenThamSo == "Tên lớp K12")
             {
                 if(qlts.xoalop(tsdto)==true)
                 {
@@ -385,6 +385,18 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Xóa lớp thất bại");
+                    return;
+                }
+            }
+            else if(tsdto.STenThamSo=="Tên môn học")
+            {
+                if(qlts.xoamonhoc(tsdto))
+                {
+                    MessageBox.Show("Xóa môn học thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa môn hôc thất bại");
                     return;
                 }
             }

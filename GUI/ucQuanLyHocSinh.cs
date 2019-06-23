@@ -147,7 +147,6 @@ namespace GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             dang_them = true;
-            btnTim.Enabled = false;
             btnThem.Enabled = false;
             btnLuu.Enabled = true;
             btnBoQua.Enabled = true;
@@ -261,7 +260,6 @@ namespace GUI
                     dtpNgaySinh.Enabled = false;
                     btnThem.Enabled = true;
                     btnXoa.Enabled = false;
-                    btnTim.Enabled = true;
                     btnLuu.Enabled = false;
                     dang_them = false;
 
@@ -313,7 +311,6 @@ namespace GUI
                         }
                         dtpNgaySinh.Enabled = false;
                         btnLuu.Enabled = false;
-                        btnTim.Enabled = true;
                         btnXoa.Enabled = false;
                         dang_sua = false;
                     }
@@ -341,7 +338,6 @@ namespace GUI
             }
             dtpNgaySinh.Enabled = false;
             btnThem.Enabled = true;
-            btnTim.Enabled = true;
             btnLuu.Enabled = false;
             btnXoa.Enabled = false;
             btnBoQua.Enabled = false;
@@ -421,7 +417,6 @@ namespace GUI
             }
             dtpNgaySinh.Enabled = false;
             btnThem.Enabled = true;
-            btnTim.Enabled = true;
             btnLuu.Enabled = false;
             btnBoQua.Enabled = false;
         }
@@ -430,7 +425,6 @@ namespace GUI
         {
             btnBoQua.Enabled = true;
             dang_sua = true;
-            btnTim.Enabled = false;
             btnThem.Enabled = false;
             btnXoa.Enabled = false;
             btnSua.Enabled = false;

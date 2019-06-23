@@ -41,12 +41,10 @@
             this.lbNgheNghiepMe = new System.Windows.Forms.Label();
             this.lbUuTien = new System.Windows.Forms.Label();
             this.cbUuTien = new System.Windows.Forms.ComboBox();
-            this.lbMaHocSinh = new System.Windows.Forms.Label();
             this.lbNgaySinh = new System.Windows.Forms.Label();
             this.lbNoiSinh = new System.Windows.Forms.Label();
             this.lbNguyenQuan = new System.Windows.Forms.Label();
             this.lbGioiTinh = new System.Windows.Forms.Label();
-            this.btnTim = new System.Windows.Forms.Button();
             this.tbHoVaTen = new System.Windows.Forms.TextBox();
             this.tbNguyenQuan = new System.Windows.Forms.TextBox();
             this.tbNoiSinh = new System.Windows.Forms.TextBox();
@@ -55,7 +53,6 @@
             this.tbTenMe = new System.Windows.Forms.TextBox();
             this.tbNgheNghiepCha = new System.Windows.Forms.TextBox();
             this.tbNgheNghiepMe = new System.Windows.Forms.TextBox();
-            this.tbMaHocSinh = new System.Windows.Forms.TextBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -250,19 +247,6 @@
             this.cbUuTien.Size = new System.Drawing.Size(657, 24);
             this.cbUuTien.TabIndex = 47;
             // 
-            // lbMaHocSinh
-            // 
-            this.lbMaHocSinh.AutoSize = true;
-            this.lbMaHocSinh.BackColor = System.Drawing.Color.Transparent;
-            this.lbMaHocSinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbMaHocSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaHocSinh.ForeColor = System.Drawing.Color.Snow;
-            this.lbMaHocSinh.Location = new System.Drawing.Point(28, 220);
-            this.lbMaHocSinh.Name = "lbMaHocSinh";
-            this.lbMaHocSinh.Size = new System.Drawing.Size(119, 18);
-            this.lbMaHocSinh.TabIndex = 53;
-            this.lbMaHocSinh.Text = "Mã HS cần tìm";
-            // 
             // lbNgaySinh
             // 
             this.lbNgaySinh.AutoSize = true;
@@ -314,20 +298,6 @@
             this.lbGioiTinh.Size = new System.Drawing.Size(71, 18);
             this.lbGioiTinh.TabIndex = 58;
             this.lbGioiTinh.Text = "Giới tính";
-            // 
-            // btnTim
-            // 
-            this.btnTim.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnTim.FlatAppearance.BorderSize = 0;
-            this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.ForeColor = System.Drawing.Color.Black;
-            this.btnTim.Location = new System.Drawing.Point(174, 222);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(86, 62);
-            this.btnTim.TabIndex = 60;
-            this.btnTim.Text = "TÌM";
-            this.btnTim.UseVisualStyleBackColor = false;
             // 
             // tbHoVaTen
             // 
@@ -393,13 +363,6 @@
             this.tbNgheNghiepMe.Size = new System.Drawing.Size(245, 22);
             this.tbNgheNghiepMe.TabIndex = 72;
             // 
-            // tbMaHocSinh
-            // 
-            this.tbMaHocSinh.Location = new System.Drawing.Point(12, 245);
-            this.tbMaHocSinh.Name = "tbMaHocSinh";
-            this.tbMaHocSinh.Size = new System.Drawing.Size(146, 22);
-            this.tbMaHocSinh.TabIndex = 73;
-            // 
             // btnThem
             // 
             this.btnThem.AutoSize = true;
@@ -408,7 +371,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Black;
-            this.btnThem.Location = new System.Drawing.Point(288, 222);
+            this.btnThem.Location = new System.Drawing.Point(155, 220);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(86, 62);
             this.btnThem.TabIndex = 74;
@@ -423,7 +386,7 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.Location = new System.Drawing.Point(484, 222);
+            this.btnXoa.Location = new System.Drawing.Point(351, 220);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(86, 62);
             this.btnXoa.TabIndex = 75;
@@ -438,7 +401,7 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Black;
-            this.btnSua.Location = new System.Drawing.Point(585, 222);
+            this.btnSua.Location = new System.Drawing.Point(452, 220);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(86, 62);
             this.btnSua.TabIndex = 76;
@@ -453,7 +416,7 @@
             this.btnBoQua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBoQua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBoQua.ForeColor = System.Drawing.Color.Black;
-            this.btnBoQua.Location = new System.Drawing.Point(696, 222);
+            this.btnBoQua.Location = new System.Drawing.Point(563, 220);
             this.btnBoQua.Name = "btnBoQua";
             this.btnBoQua.Size = new System.Drawing.Size(101, 62);
             this.btnBoQua.TabIndex = 77;
@@ -532,7 +495,7 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.Black;
-            this.btnLuu.Location = new System.Drawing.Point(383, 222);
+            this.btnLuu.Location = new System.Drawing.Point(250, 220);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(86, 62);
             this.btnLuu.TabIndex = 79;
@@ -689,7 +652,6 @@
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.tbMaHocSinh);
             this.Controls.Add(this.tbNgheNghiepMe);
             this.Controls.Add(this.tbNgheNghiepCha);
             this.Controls.Add(this.tbTenMe);
@@ -698,13 +660,11 @@
             this.Controls.Add(this.tbNoiSinh);
             this.Controls.Add(this.tbNguyenQuan);
             this.Controls.Add(this.tbHoVaTen);
-            this.Controls.Add(this.btnTim);
             this.Controls.Add(this.dtgvDanhSachSinhVien);
             this.Controls.Add(this.lbGioiTinh);
             this.Controls.Add(this.lbNguyenQuan);
             this.Controls.Add(this.lbNoiSinh);
             this.Controls.Add(this.lbNgaySinh);
-            this.Controls.Add(this.lbMaHocSinh);
             this.Controls.Add(this.cbUuTien);
             this.Controls.Add(this.lbUuTien);
             this.Controls.Add(this.lbNgheNghiepMe);
@@ -742,12 +702,10 @@
         private System.Windows.Forms.Label lbNgheNghiepMe;
         private System.Windows.Forms.Label lbUuTien;
         private System.Windows.Forms.ComboBox cbUuTien;
-        private System.Windows.Forms.Label lbMaHocSinh;
         private System.Windows.Forms.Label lbNgaySinh;
         private System.Windows.Forms.Label lbNoiSinh;
         private System.Windows.Forms.Label lbNguyenQuan;
         private System.Windows.Forms.Label lbGioiTinh;
-        private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.TextBox tbHoVaTen;
         private System.Windows.Forms.TextBox tbNguyenQuan;
         private System.Windows.Forms.TextBox tbNoiSinh;
@@ -756,7 +714,6 @@
         private System.Windows.Forms.TextBox tbTenMe;
         private System.Windows.Forms.TextBox tbNgheNghiepCha;
         private System.Windows.Forms.TextBox tbNgheNghiepMe;
-        private System.Windows.Forms.TextBox tbMaHocSinh;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
