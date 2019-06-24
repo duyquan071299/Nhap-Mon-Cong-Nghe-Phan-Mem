@@ -31,7 +31,7 @@
             this.tbHK = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLapBC = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnXuatBC = new System.Windows.Forms.Button();
             this.dtgvBaoCaoMon = new System.Windows.Forms.DataGridView();
             this.cbMon = new System.Windows.Forms.ComboBox();
             this.cbHK = new System.Windows.Forms.ComboBox();
@@ -47,22 +47,22 @@
             // tbHK
             // 
             this.tbHK.AutoSize = true;
-            this.tbHK.Font = new System.Drawing.Font("UTM Avo", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbHK.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tbHK.Location = new System.Drawing.Point(222, 40);
+            this.tbHK.Location = new System.Drawing.Point(180, 40);
             this.tbHK.Name = "tbHK";
-            this.tbHK.Size = new System.Drawing.Size(61, 23);
+            this.tbHK.Size = new System.Drawing.Size(57, 20);
             this.tbHK.TabIndex = 0;
             this.tbHK.Text = "Học kì";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("UTM Avo", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(419, 40);
+            this.label2.Location = new System.Drawing.Point(377, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 23);
+            this.label2.Size = new System.Drawing.Size(41, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Môn";
             // 
@@ -71,7 +71,7 @@
             this.btnLapBC.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnLapBC.FlatAppearance.BorderSize = 0;
             this.btnLapBC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLapBC.Font = new System.Drawing.Font("UTM Avo", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLapBC.Location = new System.Drawing.Point(163, 98);
             this.btnLapBC.Name = "btnLapBC";
             this.btnLapBC.Size = new System.Drawing.Size(205, 63);
@@ -80,18 +80,19 @@
             this.btnLapBC.UseVisualStyleBackColor = false;
             this.btnLapBC.Click += new System.EventHandler(this.btnLapBC_Click);
             // 
-            // button3
+            // btnXuatBC
             // 
-            this.button3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("UTM Avo", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(409, 98);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(205, 63);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "LƯU BÁO CÁO";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnXuatBC.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnXuatBC.FlatAppearance.BorderSize = 0;
+            this.btnXuatBC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuatBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatBC.Location = new System.Drawing.Point(409, 98);
+            this.btnXuatBC.Name = "btnXuatBC";
+            this.btnXuatBC.Size = new System.Drawing.Size(205, 63);
+            this.btnXuatBC.TabIndex = 8;
+            this.btnXuatBC.Text = "XUẤT BÁO CÁO";
+            this.btnXuatBC.UseVisualStyleBackColor = false;
+            this.btnXuatBC.Click += new System.EventHandler(this.btnXuatBC_Click);
             // 
             // dtgvBaoCaoMon
             // 
@@ -114,7 +115,7 @@
             // cbMon
             // 
             this.cbMon.FormattingEnabled = true;
-            this.cbMon.Location = new System.Drawing.Point(472, 39);
+            this.cbMon.Location = new System.Drawing.Point(430, 39);
             this.cbMon.Name = "cbMon";
             this.cbMon.Size = new System.Drawing.Size(121, 24);
             this.cbMon.TabIndex = 10;
@@ -125,14 +126,14 @@
             this.cbHK.Items.AddRange(new object[] {
             "HK1",
             "HK2"});
-            this.cbHK.Location = new System.Drawing.Point(289, 39);
+            this.cbHK.Location = new System.Drawing.Point(247, 39);
             this.cbHK.Name = "cbHK";
             this.cbHK.Size = new System.Drawing.Size(121, 24);
             this.cbHK.TabIndex = 11;
             // 
             // Lop
             // 
-            this.Lop.DataPropertyName = "SLop";
+            this.Lop.DataPropertyName = "Lop";
             this.Lop.HeaderText = "Lớp";
             this.Lop.Name = "Lop";
             this.Lop.ReadOnly = true;
@@ -154,21 +155,21 @@
             // 
             // SiSo
             // 
-            this.SiSo.DataPropertyName = "ISiSo";
+            this.SiSo.DataPropertyName = "SiSo";
             this.SiSo.HeaderText = "Sỉ số";
             this.SiSo.Name = "SiSo";
             this.SiSo.ReadOnly = true;
             // 
             // SLDat
             // 
-            this.SLDat.DataPropertyName = "ISLDat";
+            this.SLDat.DataPropertyName = "SLDat";
             this.SLDat.HeaderText = "Số lượng đạt";
             this.SLDat.Name = "SLDat";
             this.SLDat.ReadOnly = true;
             // 
             // TiLe
             // 
-            this.TiLe.DataPropertyName = "FTiLeDat";
+            this.TiLe.DataPropertyName = "TiLeDat";
             this.TiLe.HeaderText = "Tỉ lệ đạt";
             this.TiLe.Name = "TiLe";
             this.TiLe.ReadOnly = true;
@@ -181,7 +182,7 @@
             this.Controls.Add(this.cbHK);
             this.Controls.Add(this.cbMon);
             this.Controls.Add(this.dtgvBaoCaoMon);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnXuatBC);
             this.Controls.Add(this.btnLapBC);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbHK);
@@ -199,7 +200,7 @@
         private System.Windows.Forms.Label tbHK;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLapBC;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnXuatBC;
         private System.Windows.Forms.DataGridView dtgvBaoCaoMon;
         private System.Windows.Forms.ComboBox cbMon;
         private System.Windows.Forms.ComboBox cbHK;

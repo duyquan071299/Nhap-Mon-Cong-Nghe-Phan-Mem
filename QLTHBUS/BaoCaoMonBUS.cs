@@ -8,12 +8,12 @@ using QLTHDTO;
 
 namespace QLTHBUS
 {
-    public class BaoCaoBUS
+    public class BaoCaoMonBUS
     {
-        private BaoCaoDAL baocaoDAL;
-        public BaoCaoBUS()
+        private BaoCaoMonDAL baocaoDAL;
+        public BaoCaoMonBUS()
         {
-            baocaoDAL = new BaoCaoDAL();
+            baocaoDAL = new BaoCaoMonDAL();
         }
         public List<BaoCaoMonDTO> TaoBaoCaoMon(BaoCaoMonDTO DTO)
         {

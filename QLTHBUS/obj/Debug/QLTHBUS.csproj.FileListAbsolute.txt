@@ -1,11 +1,11 @@
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\bin\Debug\QLTHBUS.dll
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\bin\Debug\QLTHBUS.pdb
-D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\obj\Debug\QLTHBUS.csprojAssemblyReference.cache
-D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\obj\Debug\QLTHBUS.csproj.CoreCompileInputs.cache
-D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\obj\Debug\QLTHBUS.dll
-D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\obj\Debug\QLTHBUS.pdb
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\bin\Debug\QLTHDAL.dll
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\bin\Debug\QLTHDTO.dll
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\bin\Debug\QLTHDAL.pdb
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\bin\Debug\QLTHDTO.pdb
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\obj\Debug\QLTHBUS.csprojAssemblyReference.cache
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\obj\Debug\QLTHBUS.csproj.CoreCompileInputs.cache
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\obj\Debug\QLTHBUS.csproj.CopyComplete
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\obj\Debug\QLTHBUS.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHBUS\obj\Debug\QLTHBUS.pdb

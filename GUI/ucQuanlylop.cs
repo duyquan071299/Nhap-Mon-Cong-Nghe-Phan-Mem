@@ -103,7 +103,7 @@ namespace GUI
         {
             List<string> tenlop = new List<string>();
 
-            tenlop =   quanlylop.SelectLop(cbKhoi.Text);
+            tenlop = quanlylop.SelectLop(cbKhoi.Text);
             cbLop.Items.Clear();
             foreach(string temp in tenlop)
             {

@@ -33,7 +33,7 @@ namespace GUI
         private void button2_Click(object sender, EventArgs e)
         {
             (this.Owner as frmMenu).pnManHinhXuLy.Controls.Clear();
-            ucBaocaoHocki guiBaoCaoNam = new ucBaocaoHocki();
+            ucBaocaoHocKy guiBaoCaoNam = new ucBaocaoHocKy();
             (this.Owner as frmMenu).pnManHinhXuLy.Controls.Add(guiBaoCaoNam);
             this.Close();
         }

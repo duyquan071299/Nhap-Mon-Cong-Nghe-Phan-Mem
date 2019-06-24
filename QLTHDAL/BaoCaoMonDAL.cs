@@ -9,10 +9,10 @@ using QLTHDTO;
 
 namespace QLTHDAL
 {
-    public class BaoCaoDAL
+    public class BaoCaoMonDAL
     {
         private string connectionString;
-        public BaoCaoDAL()
+        public BaoCaoMonDAL()
         {
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
@@ -62,10 +62,10 @@ namespace QLTHDAL
                             while (reader.Read())
                             {
                                 BaoCaoMonDTO BCM = new BaoCaoMonDTO();
-                                BCM.SLop = reader["TenLop"].ToString();
+                                BCM.Lop = reader["TenLop"].ToString();
                                 BCM.Mon = reader["TenMonHoc"].ToString();
                                 BCM.HocKy = reader["TenHK"].ToString();
-                                BCM.ISiSo = reader["SiSo"].ToString();
+                                BCM.SiSo = reader["SiSo"].ToString();
                                 BCM.DiemDat = DTO.DiemDat;
                                 lsbcm.Add(BCM);
                             }
@@ -85,7 +85,9 @@ namespace QLTHDAL
                 query = string.Empty;
                 query += "select count(*) SoLuongDat ";
                 query += "from tblDiem a, tblHocKi b, tblHocSinh c, tblLop d, tblMonHoc e ";
-                query += "where a.MaHK=b.MaHK and a.MaHS=c.MaHS and a.MaMonHoc=e.MaMonHoc and c.MaLop=d.MaLop and e.TenMonHoc=@TenMon and b.TenHK=@TenHK and d.TenLop=@TenLop and a.DiemTrungBinh>= @DiemDat";
+                query += "where a.MaHK=b.MaHK and a.MaHS=c.MaHS and a.MaMonHoc=e.MaMonHoc " +
+                    "and c.MaLop=d.MaLop and e.TenMonHoc=@TenMon and b.TenHK=@TenHK " +
+                    "and d.TenLop=@TenLop and a.DiemTrungBinh>= @DiemDat";
                 using (SqlConnection con = new SqlConnection(ConnectionString))
                 {
 
@@ -96,7 +98,7 @@ namespace QLTHDAL
                         cmd.CommandText = query;
                         cmd.Parameters.AddWithValue("@TenMon", tempBCM.Mon);
                         cmd.Parameters.AddWithValue("@TenHK", tempBCM.HocKy);
-                        cmd.Parameters.AddWithValue("@TenLop", tempBCM.SLop);
+                        cmd.Parameters.AddWithValue("@TenLop", tempBCM.Lop);
                         cmd.Parameters.AddWithValue("@DiemDat", tempBCM.DiemDat);
 
                         try
@@ -108,7 +110,7 @@ namespace QLTHDAL
                             {
                                 while (reader.Read())
                                 {
-                                    tempBCM.ISLDat = reader["SoLuongDat"].ToString();
+                                    tempBCM.SLDat = reader["SoLuongDat"].ToString();
                                 }
                             }
                             con.Close();
@@ -120,7 +122,7 @@ namespace QLTHDAL
                         }
                     }
                 }
-                tempBCM.FTiLeDat = ((float.Parse(tempBCM.ISLDat) / float.Parse(tempBCM.ISiSo))*100).ToString();
+                tempBCM.TiLeDat = ((float.Parse(tempBCM.SLDat) / float.Parse(tempBCM.SiSo))*100).ToString();
             }
             
          

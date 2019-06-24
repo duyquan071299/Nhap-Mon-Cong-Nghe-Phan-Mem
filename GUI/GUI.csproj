@@ -72,11 +72,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet11.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet11.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,11 +110,11 @@
     <Compile Include="ucBaocaoMon.Designer.cs">
       <DependentUpon>ucBaocaoMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucBaocaoHocki.cs">
+    <Compile Include="ucBaocaoHocKy.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucBaocaoHocki.Designer.cs">
-      <DependentUpon>ucBaocaoHocki.cs</DependentUpon>
+    <Compile Include="ucBaocaoHocKy.Designer.cs">
+      <DependentUpon>ucBaocaoHocKy.cs</DependentUpon>
     </Compile>
     <Compile Include="ucPhanQuyen.cs">
       <SubType>UserControl</SubType>
@@ -190,8 +185,8 @@
     <EmbeddedResource Include="ucBaocaoMon.resx">
       <DependentUpon>ucBaocaoMon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucBaocaoHocki.resx">
-      <DependentUpon>ucBaocaoHocki.cs</DependentUpon>
+    <EmbeddedResource Include="ucBaocaoHocKy.resx">
+      <DependentUpon>ucBaocaoHocKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucPhanQuyen.resx">
       <DependentUpon>ucPhanQuyen.cs</DependentUpon>
@@ -214,17 +209,6 @@
     <EmbeddedResource Include="ucTraCuuTTHS.resx">
       <DependentUpon>ucTraCuuTTHS.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSet11.xsc">
-      <DependentUpon>DataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet11.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet11.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet11.xss">
-      <DependentUpon>DataSet11.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -250,6 +234,35 @@
       <Project>{1b211e60-d47d-4afc-a07d-1b38b59fbf46}</Project>
       <Name>QLTHDTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

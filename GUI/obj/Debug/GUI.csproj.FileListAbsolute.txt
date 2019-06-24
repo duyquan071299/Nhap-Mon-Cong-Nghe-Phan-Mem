@@ -1,122 +1,3 @@
-<<<<<<< HEAD
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\GUI.exe.config
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\GUI.exe
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\GUI.pdb
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu_UI_v1.5.3.dll
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\VisualReactiveWinForms.dll
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu_UI_v1.5.3.xml
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\VisualReactiveWinForms.xml
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.exe.config
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.frmMenu.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuBaocao.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuHethong.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuQuanly.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuTracuu.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.Properties.Resources.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucBaocaoMon.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucPhanQuyen.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucQuanlyDiem.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucQuanLyHocSinh.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucQuanlylop.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucThamso.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucTracuuDiem.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucTraCuuTTHS.resources
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csproj.CopyComplete
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.exe
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.pdb
-D:\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucBaocaoHocki.resources
-=======
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\GUI.exe.config
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\GUI.exe
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\GUI.pdb
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu_UI_v1.5.3.dll
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\VisualReactiveWinForms.dll
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu_UI_v1.5.3.xml
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\VisualReactiveWinForms.xml
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.exe.config
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.Form1.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.csproj.CopyComplete
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.exe
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.pdb
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
-C:\Users\toant\source\repos\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.mnuQuanly.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.mnuTracuu.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.ucTraCuuTTHS.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.ucTracuuDiem.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.ucQuanlylop.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.ucQuanlyDiem.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.ucBaocaoMon.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.ucBaocaoNam.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.mnuBaocao.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.ucThamso.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.mnuHethong.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.ucPhanQuyen.resources
-C:\Users\toant\source\repos\GUI\GUI\obj\Debug\GUI.ucQuanlyHocsinh.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\GUI.exe.config
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\GUI.exe
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\GUI.pdb
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu_UI_v1.5.3.dll
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\VisualReactiveWinForms.dll
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\Bunifu_UI_v1.5.3.xml
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\bin\Debug\VisualReactiveWinForms.xml
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.exe.config
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.Form1.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.mnuBaocao.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.mnuHethong.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.mnuQuanly.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.mnuTracuu.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.ucQuanlyHocsinh.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.ucBaocaoMon.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.ucBaocaoNam.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.ucPhanQuyen.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.ucQuanlyDiem.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.ucQuanlylop.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.ucThamso.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.ucTracuuDiem.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.ucTraCuuTTHS.resources
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.csproj.CopyComplete
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.exe
-C:\Users\Duy Quan\Desktop\GUI (2)\GUI\GUI\obj\Debug\GUI.pdb
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\GUI.exe.config
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\GUI.exe
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\GUI.pdb
@@ -126,7 +7,12 @@ D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.Wi
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu_UI_v1.5.3.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\QLTHBUS.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\QLTHDTO.dll
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\VisualReactiveWinForms.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\QLTHDAL.dll
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\QLTHBUS.pdb
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\QLTHDTO.pdb
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
@@ -134,19 +20,19 @@ D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.Wi
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\Bunifu_UI_v1.5.3.xml
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\VisualReactiveWinForms.xml
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\bin\Debug\QLTHDAL.pdb
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.exe.config
-D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.Form1.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.frmMenu.resources
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuBaocao.resources
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuHethong.resources
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuQuanly.resources
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.mnuTracuu.resources
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.Properties.Resources.resources
-D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucQuanlyHocsinh.resources
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucBaocaoMon.resources
-D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucBaocaoNam.resources
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucPhanQuyen.resources
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucQuanlyDiem.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucQuanLyHocSinh.resources
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucQuanlylop.resources
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucThamso.resources
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucTracuuDiem.resources
@@ -156,4 +42,5 @@ D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csproj.C
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csproj.CopyComplete
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.exe
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.pdb
->>>>>>> Quan
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csproj.ResolveComReference.cache
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucBaocaoHocKy.resources

@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCaoBUS.cs" />
+    <Compile Include="BaoCaoHocKyBUS.cs" />
+    <Compile Include="BaoCaoMonBUS.cs" />
     <Compile Include="QuanLyDiemBUS.cs" />
     <Compile Include="QuanLyHocSinhBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

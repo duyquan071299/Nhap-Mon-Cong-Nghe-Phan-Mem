@@ -1,6 +1,6 @@
-D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDTO\obj\Debug\QLTHDTO.csprojAssemblyReference.cache
-D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDTO\obj\Debug\QLTHDTO.csproj.CoreCompileInputs.cache
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDTO\bin\Debug\QLTHDTO.dll
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDTO\bin\Debug\QLTHDTO.pdb
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDTO\obj\Debug\QLTHDTO.csprojAssemblyReference.cache
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDTO\obj\Debug\QLTHDTO.csproj.CoreCompileInputs.cache
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDTO\obj\Debug\QLTHDTO.dll
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\QLTHDTO\obj\Debug\QLTHDTO.pdb
