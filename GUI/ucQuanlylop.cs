@@ -23,6 +23,10 @@ namespace GUI
         private ucThamso a = new ucThamso();
         private QuanLyLopBUS quanlylop;
         private QuanLyHocSinhBUS quanlyhocsinh;
+        private PhanQuyenBUS pqbPhanQuyen;
+        private string sCurrentUser;
+
+        public string CurrentUser { get => sCurrentUser; set => sCurrentUser = value; }
 
         private void ucQuanlylop_Load(object sender, EventArgs e)
         {
@@ -30,6 +34,7 @@ namespace GUI
             btnXoa.Enabled = false;
             quanlylop = new QuanLyLopBUS();
             quanlyhocsinh = new QuanLyHocSinhBUS();
+            pqbPhanQuyen = new PhanQuyenBUS();
             Load_DanhSachHocSinhChuaCoLop();
         }
 
@@ -53,50 +58,57 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            a.Load_DanhSachThamSo();
-            List<string> danhsachhocsinhchuacolop = new List<string>();
-            foreach(DataGridViewRow temp in dtgvDSHSChuaCoLop.Rows)
+            List<string> lsQuyen = pqbPhanQuyen.TimNguoiDung(CurrentUser);
+            if (lsQuyen.Contains("ADD"))
             {
-                danhsachhocsinhchuacolop.Add(temp.Cells[0].Value.ToString());
-            }
-            if (danhsachhocsinhchuacolop.Contains(tbMaHS.Text) == false)
-            {
-                MessageBox.Show("Học sinh không hợp lệ");
-                return;
-            }
-            string sisotoida = string.Empty;
-            foreach (DataGridViewRow temp in a.dtgvThamSo.Rows)
-            {
-                if (temp.Cells[0].Value.ToString() == "Sỉ số lớp tối đa")
+                a.Load_DanhSachThamSo();
+                List<string> danhsachhocsinhchuacolop = new List<string>();
+                foreach (DataGridViewRow temp in dtgvDSHSChuaCoLop.Rows)
                 {
-                    sisotoida = temp.Cells[1].Value.ToString();
+                    danhsachhocsinhchuacolop.Add(temp.Cells[0].Value.ToString());
                 }
-            }
-            if (this.dtgvDanhSachLop.RowCount==int.Parse(sisotoida))
-            {
-                MessageBox.Show("Lớp đã đủ số lượng");
-                return;
-            }
-            List<string> danhsachmshs = new List<string>();
-            danhsachmshs = quanlyhocsinh.SelectMSSV();
-            if (!danhsachmshs.Contains(tbMaHS.Text))
-            {
-                MessageBox.Show("Có lỗi");
-                return;
+                if (danhsachhocsinhchuacolop.Contains(tbMaHS.Text) == false)
+                {
+                    MessageBox.Show("Học sinh không hợp lệ");
+                    return;
+                }
+                string sisotoida = string.Empty;
+                foreach (DataGridViewRow temp in a.dtgvThamSo.Rows)
+                {
+                    if (temp.Cells[0].Value.ToString() == "Sỉ số lớp tối đa")
+                    {
+                        sisotoida = temp.Cells[1].Value.ToString();
+                    }
+                }
+                if (this.dtgvDanhSachLop.RowCount == int.Parse(sisotoida))
+                {
+                    MessageBox.Show("Lớp đã đủ số lượng");
+                    return;
+                }
+                List<string> danhsachmshs = new List<string>();
+                danhsachmshs = quanlyhocsinh.SelectMSSV();
+                if (!danhsachmshs.Contains(tbMaHS.Text))
+                {
+                    MessageBox.Show("Có lỗi");
+                    return;
+                }
+                else
+                {
+                    QuanLyLopDTO hs = new QuanLyLopDTO();
+                    hs.MaHS = tbMaHS.Text;
+                    hs.TenLop = cbLop.Text;
+                    if (quanlylop.Them(hs) == true)
+                    {
+                        MessageBox.Show("thêm học sinh thành công");
+                    }
+                }
+                Load_DanhSachHocSinhChuaCoLop();
+                Load_DanhSachHocSinh(cbLop.Text);
             }
             else
             {
-                QuanLyLopDTO hs = new QuanLyLopDTO();
-                hs.MaHS = tbMaHS.Text;
-                hs.TenLop = cbLop.Text;
-                if (quanlylop.Them(hs) == true)
-                {
-                    MessageBox.Show("thêm học sinh thành công");
-                }
+                MessageBox.Show("Bạn không có quyền thêm");
             }
-            Load_DanhSachHocSinhChuaCoLop();
-            Load_DanhSachHocSinh(cbLop.Text);
-
         }
 
         private void cbKhoi_SelectedIndexChanged(object sender, EventArgs e)
@@ -120,33 +132,41 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            QuanLyLopDTO HS = new QuanLyLopDTO();
-            HS.MaHS = tbMaHS.Text;
-            HS.TenLop = cbLop.Text;
-            List<string> danhsachlop = new List<string>();
-            foreach(DataGridViewRow temp in dtgvDanhSachLop.Rows)
+            List<string> lsQuyen = pqbPhanQuyen.TimNguoiDung(CurrentUser);
+            if (lsQuyen.Contains("DELETE"))
             {
-                danhsachlop.Add(temp.Cells[0].Value.ToString());
-            }
-            if(danhsachlop.Contains(tbMaHS.Text)==false)
-            {
-                MessageBox.Show("Học sinh không có trong lớp");
-                return;
-            }
-            else
-            {
-                if(quanlylop.Xoa(HS)==true)
+                QuanLyLopDTO HS = new QuanLyLopDTO();
+                HS.MaHS = tbMaHS.Text;
+                HS.TenLop = cbLop.Text;
+                List<string> danhsachlop = new List<string>();
+                foreach (DataGridViewRow temp in dtgvDanhSachLop.Rows)
                 {
-                    MessageBox.Show("Xóa học sinh khỏi lớp thành công");
+                    danhsachlop.Add(temp.Cells[0].Value.ToString());
+                }
+                if (danhsachlop.Contains(tbMaHS.Text) == false)
+                {
+                    MessageBox.Show("Học sinh không có trong lớp");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Xóa học sinh khỏi lớp thật bại");
-                    return;
+                    if (quanlylop.Xoa(HS) == true)
+                    {
+                        MessageBox.Show("Xóa học sinh khỏi lớp thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa học sinh khỏi lớp thật bại");
+                        return;
+                    }
                 }
+                Load_DanhSachHocSinhChuaCoLop();
+                Load_DanhSachHocSinh(cbLop.Text);
             }
-            Load_DanhSachHocSinhChuaCoLop();
-            Load_DanhSachHocSinh(cbLop.Text);
+            else
+            {
+                MessageBox.Show("Bạn không có quyền xóa");
+            }
         }
 
         private void dtgvDanhSachLop_SelectionChanged(object sender, EventArgs e)

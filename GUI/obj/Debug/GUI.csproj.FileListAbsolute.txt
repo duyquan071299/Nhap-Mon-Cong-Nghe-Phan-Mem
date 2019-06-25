@@ -44,3 +44,4 @@ D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.exe
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.pdb
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.csproj.ResolveComReference.cache
 D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.ucBaocaoHocKy.resources
+D:\NhapMonCongNghePhanMem\Nhap-Mon-Cong-Nghe-Phan-Mem\GUI\obj\Debug\GUI.frmDangNhap.resources

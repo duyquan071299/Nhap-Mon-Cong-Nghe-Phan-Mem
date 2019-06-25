@@ -28,6 +28,7 @@ namespace GUI
             (this.Owner as frmMenu).pnManHinhXuLy.Controls.Clear();
             ucQuanLyHocSinh guiQuanLyHocSinh = new ucQuanLyHocSinh();
             (this.Owner as frmMenu).pnManHinhXuLy.Controls.Add(guiQuanLyHocSinh);
+            guiQuanLyHocSinh.CurrentUser = (this.Owner as frmMenu).CurrentUser1;
             this.Close();
         }
 
@@ -36,6 +37,7 @@ namespace GUI
             (this.Owner as frmMenu).pnManHinhXuLy.Controls.Clear();
             ucQuanlylop guiQuanLyLop = new ucQuanlylop();
             (this.Owner as frmMenu).pnManHinhXuLy.Controls.Add(guiQuanLyLop);
+            guiQuanLyLop.CurrentUser = (this.Owner as frmMenu).CurrentUser1;
             this.Close();
         }
 
@@ -44,7 +46,10 @@ namespace GUI
             (this.Owner as frmMenu).pnManHinhXuLy.Controls.Clear();
             ucQuanlyDiem guiQuanLyDiem = new ucQuanlyDiem();
             (this.Owner as frmMenu).pnManHinhXuLy.Controls.Add(guiQuanLyDiem);
+            guiQuanLyDiem.CurrentUser=(this.Owner as frmMenu).CurrentUser1;
             this.Close();
         }
+
+      
     }
 }
