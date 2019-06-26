@@ -181,7 +181,7 @@ namespace GUI
             List<QuanLyHocSinhDTO> DanhSachHocSinh = qlhsBus.SelectAll();
             if (DanhSachHocSinh == null)
             {
-                MessageBox.Show("Có lỗi khi lấy Món ăn từ DB");
+                MessageBox.Show("Có lỗi khi lấy danh sách học sinh từ DB");
                 return;
             }
             dtgvDanhSachSinhVien.DataSource = null;

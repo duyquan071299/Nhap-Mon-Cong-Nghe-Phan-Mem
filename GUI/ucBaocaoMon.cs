@@ -19,10 +19,8 @@ namespace GUI
             InitializeComponent();
         }
 
-        private ucThamso a = new ucThamso();
         private BaoCaoMonBUS BaoCaoBUS;
         private QuanLyDiemBUS quanlydiem;
-        private QuanLyLopBUS quanlylop;
         private void ucBaocaoMon_Load(object sender, EventArgs e)
         {
             BaoCaoBUS = new BaoCaoMonBUS();
@@ -37,19 +35,9 @@ namespace GUI
 
         private void btnLapBC_Click(object sender, EventArgs e)
         {
-            a.Load_DanhSachThamSo();
-            string DiemDat = string.Empty;
-            foreach (DataGridViewRow temp in a.dtgvThamSo.Rows)
-            {
-                if (temp.Cells[0].Value.ToString() == "Điểm đạt môn")
-                {
-                    DiemDat = temp.Cells[1].Value.ToString();
-                }
-            }
             BaoCaoMonDTO BCMDTO = new BaoCaoMonDTO();
             BCMDTO.Mon = cbMon.Text;
             BCMDTO.HocKy = cbHK.Text;
-            BCMDTO.DiemDat = DiemDat;
             List<BaoCaoMonDTO> DanhSachBaoCao = BaoCaoBUS.TaoBaoCaoMon(BCMDTO);
             if (DanhSachBaoCao == null)
             {
@@ -78,7 +66,7 @@ namespace GUI
             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
             // get the reference of first sheet. By default its name is Sheet1.  
             // store its reference to worksheet  
-            worksheet = workbook.Sheets["Trang_tính1"];
+            worksheet = workbook.Sheets["Sheet1"];
             worksheet = workbook.ActiveSheet;
             // changing the name of active sheet  
             worksheet.Name = "Exported from gridview";

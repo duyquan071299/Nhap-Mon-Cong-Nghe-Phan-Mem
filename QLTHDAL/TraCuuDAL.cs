@@ -64,6 +64,12 @@ namespace QLTHDAL
                 query += "from tblHocSinh a, tblLop b ";
                 query += "where a.MaLop = b.MaLop and b.TenLop = @TenLop and a.MaHS =@MaHS ";
             }
+            else if (TTHSDTO.HoTen == "" && TTHSDTO.MaHS == "" && TTHSDTO.Lop == "")
+            {
+                query += "select a.*,b.TenLop ";
+                query += "from tblHocSinh a, tblLop b ";
+                query += "where a.MaLop = b.MaLop";
+            }
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -134,6 +140,12 @@ namespace QLTHDAL
                 query += "from tblHocSinh a ";
                 query += "where a.MaHS = @MaHS and a.MaLop is null";
             }
+            else if (TTHSDTO.HoTen == "" && TTHSDTO.MaHS == "" && TTHSDTO.Lop == "")
+            {
+                query += "select a.* ";
+                query += "from tblHocSinh a ";
+                query += "where a.MaLop is null";
+            }
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -180,7 +192,6 @@ namespace QLTHDAL
                     catch (Exception ex)
                     {
                         con.Close();
-                        return null;
                     }
                 }
             }

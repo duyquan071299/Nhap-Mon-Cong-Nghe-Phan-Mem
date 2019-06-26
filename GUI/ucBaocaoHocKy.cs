@@ -63,7 +63,7 @@ namespace GUI
             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
             // get the reference of first sheet. By default its name is Sheet1.  
             // store its reference to worksheet  
-            worksheet = workbook.Sheets["Trang_tính1"];
+            worksheet = workbook.Sheets["Sheet1"];
             worksheet = workbook.ActiveSheet;
             // changing the name of active sheet  
             worksheet.Name = "Exported from gridview";

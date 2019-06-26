@@ -87,7 +87,9 @@ namespace QLTHDAL
                 query += "from tblDiem a, tblHocKi b, tblHocSinh c, tblLop d, tblMonHoc e ";
                 query += "where a.MaHK=b.MaHK and a.MaHS=c.MaHS and a.MaMonHoc=e.MaMonHoc " +
                     "and c.MaLop=d.MaLop and e.TenMonHoc=@TenMon and b.TenHK=@TenHK " +
-                    "and d.TenLop=@TenLop and a.DiemTrungBinh>= @DiemDat";
+                    "and d.TenLop=@TenLop and a.DiemTrungBinh>= (select GiaTriTS " +
+                                                                                    "from tblThamSo " +
+                                                                                    "where TenTS = N'Điểm đạt môn') ";
                 using (SqlConnection con = new SqlConnection(ConnectionString))
                 {
 
@@ -99,7 +101,6 @@ namespace QLTHDAL
                         cmd.Parameters.AddWithValue("@TenMon", tempBCM.Mon);
                         cmd.Parameters.AddWithValue("@TenHK", tempBCM.HocKy);
                         cmd.Parameters.AddWithValue("@TenLop", tempBCM.Lop);
-                        cmd.Parameters.AddWithValue("@DiemDat", tempBCM.DiemDat);
 
                         try
                         {

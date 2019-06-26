@@ -63,6 +63,7 @@ namespace GUI
             cbTenThamSo.Items.Add("Số tuổi tối đa");
             cbTenThamSo.Items.Add("Sỉ số lớp tối đa");
             cbTenThamSo.Items.Add("Điểm đạt môn");
+            cbTenThamSo.Items.Add("Điểm đạt");
             cbTenThamSo.Items.Add("Tên môn học");
             cbTenThamSo.Items.Add("Tên lớp K10");
             cbTenThamSo.Items.Add("Tên lớp K11");
@@ -116,6 +117,10 @@ namespace GUI
                 {
                     cbTenThamSo.Items.Remove("Điểm đạt môn");
                 }
+                if (temp.Cells[0].Value.ToString() == "Điểm đạt")
+                {
+                    cbTenThamSo.Items.Remove("Điểm đạt");
+                }
             }
 
         }
@@ -141,7 +146,7 @@ namespace GUI
                 if (check_data())
                 {
                     if (cbTenThamSo.Text == "Sỉ số lớp tối đa" || cbTenThamSo.Text == "Số tuổi tối thiệu"
-                            || cbTenThamSo.Text == "Sỉ số lớp tối thiểu" || cbTenThamSo.Text == "Điểm đạt môn")
+                            || cbTenThamSo.Text == "Sỉ số lớp tối thiểu" || cbTenThamSo.Text == "Điểm đạt môn" || cbTenThamSo.Text == "Điểm đạt")
                     {
                         int temp;
                         if (int.TryParse(tbGiaTri.Text, out temp) == false || int.Parse(tbGiaTri.Text) <= 0)
@@ -149,7 +154,7 @@ namespace GUI
                             MessageBox.Show("Giá trị không hợp lệ");
                             return;
                         }
-                        if (cbTenThamSo.Text == "Điểm đạt môn" && int.Parse(tbGiaTri.Text) > 10)
+                        if ((cbTenThamSo.Text == "Điểm đạt môn" || cbTenThamSo.Text == "Điểm đạt") && int.Parse(tbGiaTri.Text) > 10)
                         {
                             MessageBox.Show("Giá trị không hợp lệ");
                         }
@@ -371,7 +376,7 @@ namespace GUI
             tsdto.STenThamSo = cbTenThamSo.Text;
             tsdto.SGiaTri = tbGiaTri.Text;
             if(cbTenThamSo.Text=="Sỉ số lớp tối đa" || cbTenThamSo.Text == "Số tuổi tối thiểu"
-                    || cbTenThamSo.Text == "Số tuổi tối đa"|| cbTenThamSo.Text == "Điểm đạt môn")
+                    || cbTenThamSo.Text == "Số tuổi tối đa"|| cbTenThamSo.Text == "Điểm đạt môn" || cbTenThamSo.Text == "Điểm đạt")
             {
                 MessageBox.Show("Tham số không thể xóa");
                 return;

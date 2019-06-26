@@ -518,6 +518,7 @@
             // 
             // dtgvDanhSachSinhVien
             // 
+            this.dtgvDanhSachSinhVien.AllowUserToAddRows = false;
             this.dtgvDanhSachSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDanhSachSinhVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MSHS,
