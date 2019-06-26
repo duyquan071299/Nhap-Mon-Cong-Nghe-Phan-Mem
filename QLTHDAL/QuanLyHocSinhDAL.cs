@@ -69,6 +69,7 @@ namespace QLTHDAL
         public bool Xoa(QuanLyHocSinhDTO QLHS)
         {
             string query = string.Empty;
+            query += "DELETE FROM tblDiem where MaHS=@MaHocSinh ";
             query += "DELETE FROM [tblHocSinh] WHERE [MaHS] = @MaHocSinh";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {

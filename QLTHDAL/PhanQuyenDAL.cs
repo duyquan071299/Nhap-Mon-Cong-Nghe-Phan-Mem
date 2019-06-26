@@ -20,6 +20,55 @@ namespace QLTHDAL
 
         public string ConnectionString { get => connectionString; set => connectionString = value; }
 
+        public bool CheckTenDangNhap(string TenUser)
+        {
+            string query = string.Empty;
+            List<string> lsTenDangNhap = new List<string>();
+            query = "  select TenUser" +
+                " from tblUser " +
+                "where TenUser = @TenUser";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@TenUser", TenUser);
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                string tempTenUser = reader["TenUser"].ToString();
+                                lsTenDangNhap.Add(tempTenUser);
+                            }
+                        }
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+
+                    }
+
+                }
+            }
+            if(!lsTenDangNhap.Contains(TenUser))
+            {
+                return false;
+            }
+            return true;
+        }
+
         public List<string> TimNguoiDung(string TenUser)
         {
             string query = string.Empty;
@@ -227,5 +276,113 @@ namespace QLTHDAL
             return MaQuyen;
         }
 
+        public bool XoaNguoiDung(string MaUser)
+        {
+            string query = string.Empty;
+            query += "delete from tblUser_Quyen where MaUser=@MaUser ";
+            query += "delete from tblUser where MaUser=@MaUser";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@MaUser", MaUser);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+        
+            return true;
+        }
+
+        public bool TaoNguoiDung(string TenUser, string MatKhau)
+        {
+            string query = string.Empty;
+            query += " select MaUser from tblUser";
+            string mauser = string.Empty;
+            List<string> DanhSachMaUser = new List<string>();
+            List<string> DanhsachTenUser = new List<string>();
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                mauser = reader["MaUser"].ToString();
+                                DanhSachMaUser.Add(mauser);
+                            }
+                        }
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+
+            int mausermoi = 0;
+            do
+            {
+                mausermoi++;
+                mauser = "US" + mausermoi.ToString();
+            } while (DanhSachMaUser.Contains(mauser));
+            query = string.Empty;
+            query += "insert into tblUser values(@MaUser,@TenUser,@MatKhau)";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@MaUser", mauser);
+                    cmd.Parameters.AddWithValue("@TenUser", TenUser);
+                    cmd.Parameters.AddWithValue("@MatKhau", MatKhau);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
     }
 }

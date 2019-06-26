@@ -132,12 +132,31 @@ namespace GUI
         {
             frmDangNhap frmDangNhap = new frmDangNhap();
             frmDangNhap.ShowDialog();
-            if(frmDangNhap.BcheckDn==false)
+            if (frmDangNhap.BcheckDn == false)
             {
                 this.Close();
             }
             CurrentUser1 = frmDangNhap.getUser();
             pqbPhanQuyen = new PhanQuyenBUS();
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            sidepanel.Height = btnDangXuat.Height;
+            sidepanel.Top = btnDangXuat.Top;
+            this.Hide();
+            frmDangNhap frmDangNhap = new frmDangNhap();
+            frmDangNhap.ShowDialog();
+            if (frmDangNhap.BcheckDn == false)
+            {
+                this.Close();
+            }
+            else
+            {
+                this.Show();
+                this.pnManHinhXuLy.Controls.Clear();
+                CurrentUser1 = frmDangNhap.getUser();
+            }
         }
     }
 }

@@ -77,6 +77,30 @@ CREATE TABLE [dbo].[tblDiem]
 	FOREIGN KEY (MaHK) REFERENCES tblHocKi(MaHK),
 )
 
+Create table [dbo].[tblUser]
+(
+	[MaUser] nvarchar(10) NOT NULL PRIMARY KEY,
+	[TenUser] nvarchar(20) NOT NULL unique,
+	[MatKhau] nvarchar(20) NOT NULL
+)
+
+Create table [dbo].[tblQuyen]
+(
+	[MaQuyen] int NOT NULL Primary key,
+	[TenQuyen] nvarchar(10) NOT NULL,
+)
+
+Create table [dbo].[tblUser_Quyen]
+(
+	[MaUser] nvarchar(10) Not NUll,
+	[MaQuyen] int Not NULL,
+	Primary Key (MaUser, MaQuyen),
+	FOREIGN KEY (MaUser) REFERENCES tblUser(MaUser),
+	FOREIGN KEY (MaQuyen) REFERENCES tblQuyen(MaQuyen),
+
+
+)
+
 CREATE TABLE [dbo].[tblThamSo]
 (
 	[MaTS] nvarchar(10) not null primary key,
@@ -111,6 +135,8 @@ insert into tblMonHoc values('MH7',N'Văn')
 insert into tblMonHoc values('MH8',N'Đạo Đức')
 insert into tblMonHoc values('MH9',N'Thể Dục')
 
+
+
 insert into tblThamSo values('1',N'Số tuổi tối thiểu','14')
 insert into tblThamSo values('2',N'Số tuổi tối đa','18')
 insert into tblThamSo values('3',N'Sỉ số lớp tối đa','40')
@@ -135,3 +161,26 @@ insert into tblThamSo values('MH7',N'Tên môn học',N'Văn')
 insert into tblThamSo values('MH8',N'Tên môn học',N'Đạo Đức')
 insert into tblThamSo values('MH9',N'Tên môn học',N'Thể Dục')
 
+insert into tblUser values('US1','quandh','12345')
+insert into tblUser values('US2','nhanpq','45678')
+insert into tblUser values('US3','toantn','67890')
+insert into tblUser values('US4','ngannd','45869')
+
+insert into tblQuyen values('1','EDIT')
+insert into tblQuyen values('2','ADD')
+insert into tblQuyen values('3','DELETE')
+insert into tblQuyen values('4','EXPORT')
+insert into tblQuyen values('5','ADMIN')
+
+insert into tblUser_Quyen values ('US1','1')
+insert into tblUser_Quyen values ('US1','2')
+insert into tblUser_Quyen values ('US1','3')
+insert into tblUser_Quyen values ('US1','4')
+insert into tblUser_Quyen values ('US1','5')
+insert into tblUser_Quyen values ('US2','1')
+insert into tblUser_Quyen values ('US2','2')
+insert into tblUser_Quyen values ('US2','3')
+insert into tblUser_Quyen values ('US2','4')
+insert into tblUser_Quyen values ('US3','1')
+insert into tblUser_Quyen values ('US3','3')
+insert into tblUser_Quyen values ('US4','4')

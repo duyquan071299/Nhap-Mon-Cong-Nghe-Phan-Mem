@@ -56,5 +56,10 @@ namespace GUI
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu");
             }
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

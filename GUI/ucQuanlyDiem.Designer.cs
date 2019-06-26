@@ -305,7 +305,7 @@
             this.Diem15.HeaderText = "Điểm 15 phút";
             this.Diem15.Name = "Diem15";
             this.Diem15.ReadOnly = true;
-            this.Diem15.Width = 120;
+            this.Diem15.Width = 90;
             // 
             // Diem45
             // 
@@ -313,7 +313,7 @@
             this.Diem45.HeaderText = "Điểm 45 phút";
             this.Diem45.Name = "Diem45";
             this.Diem45.ReadOnly = true;
-            this.Diem45.Width = 120;
+            this.Diem45.Width = 90;
             // 
             // DiemCuoiKy
             // 
@@ -321,7 +321,7 @@
             this.DiemCuoiKy.HeaderText = "Điểm cuối kỳ";
             this.DiemCuoiKy.Name = "DiemCuoiKy";
             this.DiemCuoiKy.ReadOnly = true;
-            this.DiemCuoiKy.Width = 120;
+            this.DiemCuoiKy.Width = 90;
             // 
             // DiemTB
             // 
@@ -329,6 +329,7 @@
             this.DiemTB.HeaderText = "Điểm trung bình";
             this.DiemTB.Name = "DiemTB";
             this.DiemTB.ReadOnly = true;
+            this.DiemTB.Width = 90;
             // 
             // ucQuanlyDiem
             // 

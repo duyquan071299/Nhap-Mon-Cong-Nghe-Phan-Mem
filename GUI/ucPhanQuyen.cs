@@ -28,13 +28,13 @@ namespace GUI
             dtgvUser.Rows.Clear();
             btnSuaQuyen.Enabled = true;
             btnXoaNguoiDung.Enabled = true;
-            if (tbTenDangNhap.Text=="")
+            if (tbTenDangNhap.Text == "")
             {
                 MessageBox.Show("Chưa điền tên đăng nhập");
                 return;
             }
             pbdPhanQuyen = new List<string>();
-            if (pqbPhanQuyen.TimNguoiDung(tbTenDangNhap.Text) != null)
+            if (pqbPhanQuyen.CheckTenDangNhap(tbTenDangNhap.Text))
             {
                 pbdPhanQuyen = pqbPhanQuyen.TimNguoiDung(tbTenDangNhap.Text);
                 dtgvUser.Rows.Add();
@@ -47,14 +47,11 @@ namespace GUI
                 if (pbdPhanQuyen.Contains("ADMIN"))
                 {
                     dtgvUser.Rows[0].Cells[5].Value = true;
-               
-
                 }
                 if (pbdPhanQuyen.Contains("EDIT"))
                 {
                     dtgvUser.Rows[0].Cells[1].Value = true;
                     //dtgvUser.Rows[0].Cells[1].ReadOnly = false;
-
                 }
                 if (pbdPhanQuyen.Contains("DELETE"))
                 {
@@ -77,9 +74,6 @@ namespace GUI
             {
                 MessageBox.Show("Người dùng không tồn tại");
             }
-       
-
-
         }
 
         private void ucPhanQuyen_Load(object sender, EventArgs e)
@@ -125,6 +119,44 @@ namespace GUI
             string MaUser = pqbPhanQuyen.getMaUser(dtgvUser.Rows[0].Cells[0].Value.ToString());
             string MaQuyen = pqbPhanQuyen.getMaQuyen(dtgvUser.CurrentCell.OwningColumn.HeaderText);
             pqbPhanQuyen.ChinhSuaQuyen(MaUser, MaQuyen, bool.Parse(dtgvUser.CurrentCell.Value.ToString()));
+        }
+
+        private void btnXoaNguoiDung_Click(object sender, EventArgs e)
+        {
+            string MaUser = pqbPhanQuyen.getMaUser(dtgvUser.Rows[0].Cells[0].Value.ToString());
+            if(pqbPhanQuyen.XoaNguoiDung(MaUser))
+            {
+                MessageBox.Show("Xóa người dùng thành công");
+                dtgvUser.Rows.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Xóa người dùng thất bại");
+            }
+            
+
+        }
+
+        private void btnTaoNguoiDung_Click(object sender, EventArgs e)
+        {
+            if(tbTK.Text=="" || tbMK.Text=="")
+            {
+                MessageBox.Show("Chưa nhập đầy đủ thông tin");
+                return;
+            }
+            else
+            {
+                if(pqbPhanQuyen.TaoNguoiDung(tbTK.Text,tbMK.Text))
+                {
+                    MessageBox.Show("Thêm người dùng thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm người dùng thất bại hoặc tên đăng nhập bị trùng");
+                    return;
+                }
+                  
+            }
         }
     }
 }

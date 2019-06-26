@@ -22,6 +22,11 @@ namespace QLTHBUS
             return phanquyenDAL.TimNguoiDung(TenUser);
         }
 
+        public bool CheckTenDangNhap(string TenUser)
+        {
+            return phanquyenDAL.CheckTenDangNhap(TenUser);
+        }
+
 
         public string getMaUser(string TenUser)
         {
@@ -36,6 +41,16 @@ namespace QLTHBUS
         public bool ChinhSuaQuyen(string MaUser, string MaQuyen, bool Order)
         {
             return phanquyenDAL.ChinhSuaQuyen(MaUser, MaQuyen, Order);
+        }
+
+        public bool XoaNguoiDung(string MaUser)
+        {
+            return phanquyenDAL.XoaNguoiDung(MaUser);
+        }
+
+        public bool TaoNguoiDung(string TenUser,string MatKhau)
+        {
+            return phanquyenDAL.TaoNguoiDung(TenUser,MatKhau);
         }
     }
 }

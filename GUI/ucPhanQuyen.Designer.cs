@@ -42,6 +42,12 @@
             this.lbThongTinNguoiDung = new System.Windows.Forms.Label();
             this.btnSuaQuyen = new System.Windows.Forms.Button();
             this.btnXong = new System.Windows.Forms.Button();
+            this.lbTaoNguoiDung = new System.Windows.Forms.Label();
+            this.tbTK = new System.Windows.Forms.TextBox();
+            this.lbTK = new System.Windows.Forms.Label();
+            this.tbMK = new System.Windows.Forms.TextBox();
+            this.lbMK = new System.Windows.Forms.Label();
+            this.btnTaoNguoiDung = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +95,7 @@
             this.btnXoaNguoiDung.TabIndex = 7;
             this.btnXoaNguoiDung.Text = "Xóa người dùng";
             this.btnXoaNguoiDung.UseVisualStyleBackColor = false;
+            this.btnXoaNguoiDung.Click += new System.EventHandler(this.btnXoaNguoiDung_Click);
             // 
             // dtgvUser
             // 
@@ -196,11 +203,78 @@
             this.btnXong.UseVisualStyleBackColor = false;
             this.btnXong.Click += new System.EventHandler(this.btnXong_Click);
             // 
+            // lbTaoNguoiDung
+            // 
+            this.lbTaoNguoiDung.AutoSize = true;
+            this.lbTaoNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTaoNguoiDung.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbTaoNguoiDung.Location = new System.Drawing.Point(270, 330);
+            this.lbTaoNguoiDung.Name = "lbTaoNguoiDung";
+            this.lbTaoNguoiDung.Size = new System.Drawing.Size(292, 29);
+            this.lbTaoNguoiDung.TabIndex = 12;
+            this.lbTaoNguoiDung.Text = "TẠO NGƯỜI DÙNG MỚI";
+            // 
+            // tbTK
+            // 
+            this.tbTK.Location = new System.Drawing.Point(336, 375);
+            this.tbTK.Name = "tbTK";
+            this.tbTK.Size = new System.Drawing.Size(257, 22);
+            this.tbTK.TabIndex = 14;
+            // 
+            // lbTK
+            // 
+            this.lbTK.AutoSize = true;
+            this.lbTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTK.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbTK.Location = new System.Drawing.Point(193, 375);
+            this.lbTK.Name = "lbTK";
+            this.lbTK.Size = new System.Drawing.Size(119, 20);
+            this.lbTK.TabIndex = 13;
+            this.lbTK.Text = "Tên đăng nhập";
+            // 
+            // tbMK
+            // 
+            this.tbMK.Location = new System.Drawing.Point(336, 412);
+            this.tbMK.Name = "tbMK";
+            this.tbMK.Size = new System.Drawing.Size(257, 22);
+            this.tbMK.TabIndex = 16;
+            // 
+            // lbMK
+            // 
+            this.lbMK.AutoSize = true;
+            this.lbMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMK.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbMK.Location = new System.Drawing.Point(193, 412);
+            this.lbMK.Name = "lbMK";
+            this.lbMK.Size = new System.Drawing.Size(77, 20);
+            this.lbMK.TabIndex = 15;
+            this.lbMK.Text = "Mật khẩu";
+            // 
+            // btnTaoNguoiDung
+            // 
+            this.btnTaoNguoiDung.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnTaoNguoiDung.FlatAppearance.BorderSize = 0;
+            this.btnTaoNguoiDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaoNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoNguoiDung.Location = new System.Drawing.Point(326, 450);
+            this.btnTaoNguoiDung.Name = "btnTaoNguoiDung";
+            this.btnTaoNguoiDung.Size = new System.Drawing.Size(175, 49);
+            this.btnTaoNguoiDung.TabIndex = 17;
+            this.btnTaoNguoiDung.Text = "Tạo người dùng";
+            this.btnTaoNguoiDung.UseVisualStyleBackColor = false;
+            this.btnTaoNguoiDung.Click += new System.EventHandler(this.btnTaoNguoiDung_Click);
+            // 
             // ucPhanQuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.Controls.Add(this.btnTaoNguoiDung);
+            this.Controls.Add(this.tbMK);
+            this.Controls.Add(this.lbMK);
+            this.Controls.Add(this.tbTK);
+            this.Controls.Add(this.lbTK);
+            this.Controls.Add(this.lbTaoNguoiDung);
             this.Controls.Add(this.btnXong);
             this.Controls.Add(this.btnSuaQuyen);
             this.Controls.Add(this.dtgvUser);
@@ -233,5 +307,11 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colAdmin;
         private System.Windows.Forms.Button btnSuaQuyen;
         private System.Windows.Forms.Button btnXong;
+        private System.Windows.Forms.Label lbTaoNguoiDung;
+        private System.Windows.Forms.TextBox tbTK;
+        private System.Windows.Forms.Label lbTK;
+        private System.Windows.Forms.TextBox tbMK;
+        private System.Windows.Forms.Label lbMK;
+        private System.Windows.Forms.Button btnTaoNguoiDung;
     }
 }
