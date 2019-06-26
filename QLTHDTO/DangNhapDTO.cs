@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace QLTHDTO
 {
-    public class PhanQuyenDTO
+    public class DangNhapDTO
     {
         private string sTenDangNhap;
-        private string sQuyen;
-
+        private string sMatKhau;
 
         public string TenDangNhap { get => sTenDangNhap; set => sTenDangNhap = value; }
-        public string Quyen { get => sQuyen; set => sQuyen = value; }
+        public string MatKhau { get => sMatKhau; set => sMatKhau = value; }
     }
 }

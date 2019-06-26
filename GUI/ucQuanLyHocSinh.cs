@@ -22,6 +22,11 @@ namespace GUI
         private int dtgv_hang = -1;
         private bool dang_them = false;
         private bool dang_sua = false;
+        private PhanQuyenBUS pqbPhanQuyen;
+        private string sCurrentUser;
+
+        public string CurrentUser { get => sCurrentUser; set => sCurrentUser = value; }
+
         private bool checkdata()
         {
             a.Load_DanhSachThamSo();
@@ -146,24 +151,32 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            dang_them = true;
-            btnThem.Enabled = false;
-            btnLuu.Enabled = true;
-            btnBoQua.Enabled = true;
-            foreach (Control temp in this.Controls)
+            List<string> lsQuyen = pqbPhanQuyen.TimNguoiDung(CurrentUser);
+            if (lsQuyen.Contains("ADD"))
             {
-                if (temp is TextBox)
+                dang_them = true;
+                btnThem.Enabled = false;
+                btnLuu.Enabled = true;
+                btnBoQua.Enabled = true;
+                foreach (Control temp in this.Controls)
                 {
-                    ((TextBox)temp).Text = null;
-                    ((TextBox)temp).Enabled = true;
+                    if (temp is TextBox)
+                    {
+                        ((TextBox)temp).Text = null;
+                        ((TextBox)temp).Enabled = true;
+                    }
+                    if (temp is ComboBox)
+                    {
+                        ((ComboBox)temp).Text = null;
+                        ((ComboBox)temp).Enabled = true;
+                    }
                 }
-                if (temp is ComboBox)
-                {
-                    ((ComboBox)temp).Text = null;
-                    ((ComboBox)temp).Enabled = true;
-                }
+                dtpNgaySinh.Enabled = true;
             }
-            dtpNgaySinh.Enabled = true;
+            else
+            {
+                MessageBox.Show("Bạn không có quyền thêm");
+            }
         }
 
         private void ucQuanLyHocSinh_Load(object sender, EventArgs e)
@@ -173,6 +186,7 @@ namespace GUI
             btnSua.Enabled = false;
             btnBoQua.Enabled = false;
             qlhsBus = new QuanLyHocSinhBUS();
+            pqbPhanQuyen = new PhanQuyenBUS();
             Load_DanhSachHocSinh();
         }
 
@@ -387,60 +401,76 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc muốn xóa SV?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            List<string> lsQuyen = pqbPhanQuyen.TimNguoiDung(CurrentUser);
+            if (lsQuyen.Contains("DELETE"))
             {
-                QuanLyHocSinhDTO hs = new QuanLyHocSinhDTO();
-                hs.MaHS = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[0].Value.ToString();
-                if (qlhsBus.Xoa(hs) == true)
+                if (MessageBox.Show("Bạn có chắc muốn xóa SV?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
-                    MessageBox.Show("Xóa học sinh thành công");
+                    QuanLyHocSinhDTO hs = new QuanLyHocSinhDTO();
+                    hs.MaHS = dtgvDanhSachSinhVien.Rows[dtgv_hang].Cells[0].Value.ToString();
+                    if (qlhsBus.Xoa(hs) == true)
+                    {
+                        MessageBox.Show("Xóa học sinh thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa học sinh thất bại");
+                        return;
+                    }
                 }
-                else
+                Load_DanhSachHocSinh();
+                foreach (Control temp in this.Controls)
                 {
-                    MessageBox.Show("Xóa học sinh thất bại");
-                    return;
+                    if (temp is TextBox)
+                    {
+                        ((TextBox)temp).Text = null;
+                        ((TextBox)temp).Enabled = false;
+                    }
+                    if (temp is ComboBox)
+                    {
+                        ((ComboBox)temp).Text = null;
+                        ((ComboBox)temp).Enabled = false;
+                    }
                 }
+                dtpNgaySinh.Enabled = false;
+                btnThem.Enabled = true;
+                btnLuu.Enabled = false;
+                btnBoQua.Enabled = false;
             }
-            Load_DanhSachHocSinh();
-            foreach (Control temp in this.Controls)
+            else
             {
-                if (temp is TextBox)
-                {
-                    ((TextBox)temp).Text = null;
-                    ((TextBox)temp).Enabled = false;
-                }
-                if (temp is ComboBox)
-                {
-                    ((ComboBox)temp).Text = null;
-                    ((ComboBox)temp).Enabled = false;
-                }
+                MessageBox.Show("Bạn không có quyền xóa");
             }
-            dtpNgaySinh.Enabled = false;
-            btnThem.Enabled = true;
-            btnLuu.Enabled = false;
-            btnBoQua.Enabled = false;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            btnBoQua.Enabled = true;
-            dang_sua = true;
-            btnThem.Enabled = false;
-            btnXoa.Enabled = false;
-            btnSua.Enabled = false;
-            btnLuu.Enabled = true;
-            foreach (Control temp in this.Controls)
+            List<string> lsQuyen = pqbPhanQuyen.TimNguoiDung(CurrentUser);
+            if (lsQuyen.Contains("EDIT"))
             {
-                if (temp is TextBox)
+                btnBoQua.Enabled = true;
+                dang_sua = true;
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
+                btnLuu.Enabled = true;
+                foreach (Control temp in this.Controls)
                 {
-                    ((TextBox)temp).Enabled = true;
+                    if (temp is TextBox)
+                    {
+                        ((TextBox)temp).Enabled = true;
+                    }
+                    if (temp is ComboBox)
+                    {
+                        ((ComboBox)temp).Enabled = true;
+                    }
                 }
-                if (temp is ComboBox)
-                {
-                    ((ComboBox)temp).Enabled = true;
-                }
+                dtpNgaySinh.Enabled = true;
             }
-            dtpNgaySinh.Enabled = true;
+            else
+            {
+                MessageBox.Show("Bạn không có quyền sửa");
+            }
         }
     }
 }

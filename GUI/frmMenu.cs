@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KimtToo.VisualReactive;
+using QLTHBUS;
 
 namespace GUI
 {
     public partial class frmMenu : Form
     {
+        private string CurrentUser;
         public frmMenu()
         {
             InitializeComponent();
@@ -20,6 +22,7 @@ namespace GUI
             sidepanel.Top = btnQuanLy.Top;
         }
 
+        private PhanQuyenBUS pqbPhanQuyen;
        
         private void Sidemenu_Click(object sender, EventArgs e)
         {
@@ -69,15 +72,23 @@ namespace GUI
         private bool check_mnBaoCao = false;
         private void button3_Click(object sender, EventArgs e)
         {
-            sidepanel.Height = button3.Height;
-            sidepanel.Top = button3.Top;
-            if (check_mnBaoCao == false)
+            List<string> lsQuyen = pqbPhanQuyen.TimNguoiDung(CurrentUser1);
+            if (lsQuyen.Contains("EXPORT"))
             {
-                check_mnBaoCao = true;
-                mnuBaocao menuBC = new mnuBaocao();
-                menuBC.Owner = this;
-                menuBC.FormClosed += MenuBC_FormClosed;
-                menuBC.ShowDialog();
+                sidepanel.Height = button3.Height;
+                sidepanel.Top = button3.Top;
+                if (check_mnBaoCao == false)
+                {
+                    check_mnBaoCao = true;
+                    mnuBaocao menuBC = new mnuBaocao();
+                    menuBC.Owner = this;
+                    menuBC.FormClosed += MenuBC_FormClosed;
+                    menuBC.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập");
             }
         }
 
@@ -87,23 +98,46 @@ namespace GUI
         }
 
         private bool check_mnHeThong = false;
+
+        public string CurrentUser1 { get => CurrentUser; set => CurrentUser = value; }
+
         private void button4_Click(object sender, EventArgs e)
         {
-            sidepanel.Height = button4.Height;
-            sidepanel.Top = button4.Top;
-            if (check_mnHeThong == false)
+            List<string> lsQuyen = pqbPhanQuyen.TimNguoiDung(CurrentUser1);
+            if (lsQuyen.Contains("ADMIN"))
             {
-                check_mnHeThong = true;
-                mnuHethong menuHT = new mnuHethong();
-                menuHT.Owner = this;
-                menuHT.FormClosed += MenuHT_FormClosed;
-                menuHT.ShowDialog();
+                sidepanel.Height = button4.Height;
+                sidepanel.Top = button4.Top;
+                if (check_mnHeThong == false)
+                {
+                    check_mnHeThong = true;
+                    mnuHethong menuHT = new mnuHethong();
+                    menuHT.Owner = this;
+                    menuHT.FormClosed += MenuHT_FormClosed;
+                    menuHT.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập");
             }
         }
 
         private void MenuHT_FormClosed(object sender, FormClosedEventArgs e)
         {
             check_mnHeThong = false;
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            frmDangNhap frmDangNhap = new frmDangNhap();
+            frmDangNhap.ShowDialog();
+            if(frmDangNhap.BcheckDn==false)
+            {
+                this.Close();
+            }
+            CurrentUser1 = frmDangNhap.getUser();
+            pqbPhanQuyen = new PhanQuyenBUS();
         }
     }
 }

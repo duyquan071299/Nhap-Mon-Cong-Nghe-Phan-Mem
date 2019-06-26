@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="BaoCaoHocKyBUS.cs" />
     <Compile Include="BaoCaoMonBUS.cs" />
+    <Compile Include="DangNhapBUS.cs" />
+    <Compile Include="PhanQuyenBUS.cs" />
     <Compile Include="QuanLyDiemBUS.cs" />
     <Compile Include="QuanLyHocSinhBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

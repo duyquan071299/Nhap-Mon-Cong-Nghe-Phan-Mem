@@ -23,6 +23,10 @@ namespace GUI
         private ucThamso a = new ucThamso();
         private QuanLyLopBUS quanlylop;
         private QuanLyDiemBUS quanlydiem;
+        private PhanQuyenBUS pqbPhanQuyen;
+        private string sCurrentUser;
+
+        public string CurrentUser { get => sCurrentUser; set => sCurrentUser = value; }
 
         private bool check_data()
         {
@@ -87,6 +91,7 @@ namespace GUI
         {
             quanlydiem = new QuanLyDiemBUS();
             quanlylop = new QuanLyLopBUS();
+            pqbPhanQuyen = new PhanQuyenBUS();
             List<QuanLyDiemDTO> danhsachmon= quanlydiem.SelectMon();
 
             foreach(var temp in danhsachmon)
@@ -171,23 +176,32 @@ namespace GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            dang_sua = true;
-            btnSua.Enabled = false;
-            btnLamMoi.Enabled = false;
-            cbHK.Enabled = false;
-            cblop.Enabled = false;
-            cbMonHoc.Enabled = false;
-            btnLayDanhSach.Enabled = false;
-            btnLuu.Enabled = true;
-            btnHuy.Enabled = true;
-            tbDiem15.Enabled = true;
-            tbDiem45.Enabled = true;
-            tbDiemCuoiKy.Enabled = true;
+            List<string> lsQuyen = pqbPhanQuyen.TimNguoiDung(CurrentUser);
+            if (lsQuyen.Contains("EDIT"))
+            {
+                dang_sua = true;
+                btnSua.Enabled = false;
+                btnLamMoi.Enabled = false;
+                cbHK.Enabled = false;
+                cblop.Enabled = false;
+                cbMonHoc.Enabled = false;
+                btnLayDanhSach.Enabled = false;
+                btnLuu.Enabled = true;
+                btnHuy.Enabled = true;
+                tbDiem15.Enabled = true;
+                tbDiem45.Enabled = true;
+                tbDiemCuoiKy.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền sửa");
+            }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if(dang_sua)
+            
+            if (dang_sua)
             {
                 float temp;
                 if (float.TryParse(tbDiem15.Text, out temp) == false || float.Parse(tbDiem15.Text) < 0 || float.Parse(tbDiem15.Text) > 10)
